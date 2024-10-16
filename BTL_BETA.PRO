@@ -48,6 +48,7 @@ predicates
 	loi_khuyen1(sb, r)
 	
 	clear_db
+	clear_db2
 	s
 	
 	
@@ -120,6 +121,12 @@ clauses
 		retract(diem_mon_hoc(_, _)),
         fail.
 	clear_db.
+	
+	clear_db2 :-
+		retract(ten_nguoi_dung(_)),
+		retract(nam_hoc_nguoi_dung(_)),
+        fail.
+	clear_db2.
 	
 	member(X, [X | _]).
 	member(X, [_ | T]) :-
@@ -205,9 +212,10 @@ clauses
 		lay_ds_mon(Nam, Ki, Ds_mon),
 		is_empty_ls_symbol(Ds_mon, Res),
 		Res = 1,
-		retract(nam_hoc_nguoi_dung(Nam)),
-		retract(hoc_ki_nguoi_dung(Ki)),
+		%retract(nam_hoc_nguoi_dung(Nam)),
+		%retract(hoc_ki_nguoi_dung(Ki)),
 		write("Nam va ki hoc khong co!\nXin vui long nhap lai"), nl,
+		clear_db2,
 		nhap_nam_va_ki; !.
 	
 	lay_ds_mon(Nam, Ki, Ds_mon) :-
