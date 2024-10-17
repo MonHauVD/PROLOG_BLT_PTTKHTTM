@@ -1,4 +1,4 @@
-% BTL beta
+% BTL gamma
 domains
     i = integer
     r = real
@@ -6,6 +6,7 @@ domains
 	ar = r*
 	as = sb*
 database
+	is_prepared(integer)
 	ten_nguoi_dung(symbol)
 	nam_hoc_nguoi_dung(integer)
 	hoc_ki_nguoi_dung(integer)
@@ -15,8 +16,10 @@ database
 	mon_hoc(integer, integer, string, string, string, string, string, string)
 predicates
 	prepare
+	checking_prepare
 	member(r, ar)
 	is_empty_ls(ar)
+	is_empty_ls2(ar, i)
 	is_not_empty_ls(ar)
 	is_empty_ls_symbol(as, i)
 	
@@ -29,8 +32,10 @@ predicates
 	
 	cmp_str(sb, as, i)
 	cmp_str1(sb, as, i, i)
+	nhap_ten_nguoi_dung
 	ktraten(sb, i)
 	nhap_nam_va_ki
+	kiem_tra_nhap_ten
 	kiem_tra_nam_va_ki(i, i)
 	
 	lay_ds_mon(i, i, as)
@@ -39,6 +44,7 @@ predicates
 	ktra_diem_nhap(r, as)
 	
 	lay_ds_diem(ar)
+	nhap_diem_mon_hoc
 	tinh_tb(r)
 	
 	dua_ra_loi_khuyen_tung_mon
@@ -53,7 +59,17 @@ predicates
 	
 	
 clauses
+	checking_prepare :-
+		findall(Is_prepared, is_prepared(Is_prepared), Ds_prepare),
+		is_empty_ls2(Ds_prepare, Res_empty_ls),
+		%write("is Database prepared: ", Res_empty_ls), nl,
+		Res_empty_ls = 0,
+		prepare
+		;!.
 	prepare :-
+		
+		assert(is_prepared(1)),
+		
 		assert(ten_ko_hop_le("cho")),
 		assert(ten_ko_hop_le("ngu")),
 		assert(ten_ko_hop_le("lon")),
@@ -73,11 +89,11 @@ clauses
 		assert(ten_ko_hop_le("con")),
 
 	
-		assert(mon_hoc(1, 1, "A11", "GioiA11", "KhaA11", "TBA11", "YeuA11", "KemA11")),
-		assert(mon_hoc(1, 1, "B11", "GioiB11", "KhaB11", "TBB11", "YeuB11", "KemB11")),
-		assert(mon_hoc(1, 1, "C11", "GioiC11", "KhaC11", "TBC11", "YeuC11", "KemC11")),
-		assert(mon_hoc(1, 1, "D11", "GioiD11", "KhaD11", "TBD11", "YeuD11", "KemD11")),
-		assert(mon_hoc(1, 1, "E11", "GioiE11", "KhaE11", "TBE11", "YeuE11", "KemE11")),
+		assert(mon_hoc(1, 1, "Triet hoc Mac-Lenin", "Ban da nam chac kien thuc. Hay doc Tu ban cua Karl Marx de hieu sau hon ve kinh te hoc chinh tri.", "Ban co nen tang tot, co gang lien he kien thuc voi thuc tien nhieu hon de hoc tot mon nay hon nhe.", "Ban can on lai cac khai niem co ban. Tap trung hoc theo chu de va lam bai tap thuong xuyen de cai thien ket qua.", "Ban nen danh thoi gian cho kien thuc nen voi Nhap mon Triet hoc Mac-Lenin ket hop voi hoc nhom de dat hieu qua tot.", "Ban nen nho giang vien ho tro, ket hop doc Giao trinh Triet hoc dai cuong va len ke hoach hoc hang ngay voi So tay Triet hoc cho nguoi moi de tranh don kien thuc.")),
+		assert(mon_hoc(1, 1, "Tin hoc co so 1", "Ban da hoc rat tot! Hay doc Computer Science: An Overview cua J. Glenn Brookshear de mo rong kien thuc.", "Ban co nen tang tot, nen kham pha them cac ung dung thuc te qua Tin hoc dai cuong cua Tran Dinh Que de nang cao trinh do.", "Ban can on tap lai cac khai niem co ban. Doc Introduction to Computer Science cua Goel de cu cung va thu lap so do tu duy de he thong hoa cac khai niem da hoc.", "Ban gap kho khan voi kien thuc nen. Bat dau voi Computer Basics for Beginners va nen nho ban be hoac giang vien giai thich lai cac phan chua hieu.", "Hay tap trung vao nhung khai niem co ban nhat. Doc Giao trinh Tin hoc co so. Len ke hoach hoc hang ngay va thuc hanh thuong xuyen de theo kip tien do.")),
+		assert(mon_hoc(1, 1, "Giai tich 1", "Ban da hoc rat tot! Hay thu thach ban than voi cac bai tap nang cao tu Giai tich 1 cua Nguyen Dinh Tri va tim hieu sau ve ung dung giai tich trong cac nganh khoa hoc va ky thuat.", "Ban co nen tang tot. Hay doc Introduction to Calculus and Analysis cua Richard Courant de nam chac phuong phap giai tich va tang cuong lam bai tap.", "Ban can tap trung hon vao cac khai niem dao ham va tich phan co ban. Su dung Calculus Made Easy cua Silvanus Thompson de hieu de hon cac cong thuc. Dong thoi on lai ly thuyet va lam bai tap tu Giao trinh Giai tich 1 cua Le Van Tien de cai thien.", "Ban gap kho khan voi kien thuc nen. Bat dau voi cac dang bai don gian nhat ve dao ham. Hoc tung buoc qua Basic Calculus cua Deborah Hughes-Hallett de khong bi ngop.", "Ban nen su dung Giai tich co ban cho nguoi moi bat dau de cuong co nen tang. Len ke hoach hoc tap hang ngay, chia nho cac phan ly thuyet va thuc hanh tung ngay.")),
+		assert(mon_hoc(1, 1, "Dai so", "Ban hoc rat tot! Doc them Linear Algebra and Its Applications cua David Lay de nang cao kien thuc va ren tu duy toan hoc voi Giao trinh Dai so cua Nguyen Tien Dung. Sau do, hay thu ap dung dai so vao do thi va hinh hoc de mo rong hieu biet.", "Ban co nen tang vung. Thuc hanh them voi Introduction to Linear Algebra cua Gilbert Strang va tang cuong giai bai tap qua Bai tap Dai so tuyen tinh cua Le Van Thang. Hay co gang nam vung khong gian vector va ma tran de chuan bi cho mon hoc tiep theo.", "Ban nen on lai cac phep bien doi ma tran va he phuong trinh tuyen tinh co ban. Hoc qua vi du trong Algebra for Beginners cua Israel Gelfand va lam them cac bai tap tu Giao trinh Dai so co ban cua Nguyen Dinh Tri.", "Ban gap kho khan voi cac khai niem nen tang. Hay on tap voi Basic Linear Algebra. Tap trung vao cac bai tap don gian nhat de khong bi ngop de cai thien mon hoc.", "Ban nen bat dau voi Dai so co ban cho nguoi moi hoc de nam vung kien thuc nen. Chia nho thoi gian hoc de on tap tung chu de mot cach deu dan va len ke hoach hoc hang ngay de theo kip tien do mon hoc.")),
+
 		
 		assert(mon_hoc(1, 2, "A12", "GioiA12", "KhaA12", "TBA12", "YeuA12", "KemA12")),
 		assert(mon_hoc(1, 2, "B12", "GioiB12", "KhaB12", "TBB12", "YeuB12", "KemB12")),
@@ -117,7 +133,7 @@ clauses
 		
 		assert(mon_hoc(4, 2, "A42", "GioiA42", "KhaA42", "TBA42", "YeuA42", "KemA42")),
 		assert(mon_hoc(4, 2, "B42", "GioiB42", "KhaB42", "TBB42", "YeuB42", "KemB42")),
-		assert(mon_hoc(4, 2, "C42", "GioiC42", "KhaC42", "TBC42", "YeuC42", "KemC42")),
+		assert(mon_hoc(4, 2, "C42", "GioiC42", "KhaC42", "T2,", "YeuC42", "KemC42")),
 		assert(mon_hoc(4, 2, "D42", "GioiD42", "KhaD42", "TBD42", "YeuD42", "KemD42")),
 		assert(mon_hoc(4, 2, "E42", "GioiE42", "KhaE42", "TBE42", "YeuE42", "KemE42")),
 		
@@ -125,7 +141,8 @@ clauses
 		assert(mon_hoc(5, 1, "B51", "GioiB51", "KhaB51", "TBB51", "YeuB51", "KemB51")),
 		assert(mon_hoc(5, 1, "C51", "GioiC51", "KhaC51", "TBC51", "YeuC51", "KemC51")),
 		assert(mon_hoc(5, 1, "D51", "GioiD51", "KhaD51", "TBD51", "YeuD51", "KemD51")),
-		assert(mon_hoc(5, 1, "E51", "GioiE51", "KhaE51", "TBE51", "YeuE51", "KemE51")).
+		assert(mon_hoc(5, 1, "E51", "GioiE51", "KhaE51", "TBE51", "YeuE51", "KemE51"))
+		;!.
 	
 	clear_db :-
 		retract(mon_hoc(_, _, _, _, _, _, _, _)),
@@ -140,6 +157,8 @@ clauses
 	clear_db2 :-
 		retract(ten_nguoi_dung(_)),
 		retract(nam_hoc_nguoi_dung(_)),
+		retract(hoc_ki_nguoi_dung(_)),
+		retract(diem_mon_hoc(_, _)),
         fail.
 	clear_db2.
 	
@@ -149,6 +168,10 @@ clauses
 		
 	is_empty_ls([]) :- !.
 	is_empty_ls([_|_]) :- fail.
+	is_empty_ls2(Ls, Res) :- 
+		is_empty_ls(Ls),
+		Res = 0;
+		Res = 1.
 	is_not_empty_ls([_|_]).
 	
 	is_empty_ls_symbol([], 1).
@@ -209,6 +232,20 @@ clauses
 		It2 = It + 1,
 		cmp_str1(S0, T, Res, It2).
 		
+	nhap_ten_nguoi_dung :-
+		write("Hay nhap ten cua ban: "),
+		readln(Name),
+		assert(ten_nguoi_dung(Name)),
+		kiem_tra_nhap_ten.
+	kiem_tra_nhap_ten :-
+		ten_nguoi_dung(Name),
+		ktraten(Name, IsValidName),
+		%write("IsValidName = ", IsValidName), nl,
+		IsValidName <> -1, % Neu ten khong hop le
+			retract(ten_nguoi_dung(Name)),
+			write("Ten khong hop le! Ket thuc chuong trinh."), nl
+		;!.
+	
 	ktraten(S0, Res) :-
 		findall(Ten, ten_ko_hop_le(Ten), Ten_ko_Hop_le),
 		cmp_str(S0, Ten_ko_Hop_le, Res).
@@ -254,11 +291,19 @@ clauses
 	
 	lay_ds_diem(Ds_diem) :-
 		findall(Diem, diem_mon_hoc(_, Diem), Ds_diem).
-
+	
+	nhap_diem_mon_hoc :-
+		nam_hoc_nguoi_dung(Nam),
+		hoc_ki_nguoi_dung(Ki),
+		%write("Nam: ", Nam, "; Ki: ", Ki), nl,
+		lay_ds_mon(Nam, Ki, Ds_mon),
+		nhap_diem(Ds_mon).
+		
 	tinh_tb(Diem_tb) :-
 		lay_ds_diem(Ds_diem),
 		%write("Ds diem: ", Ds_diem), nl,
-		averager(Ds_diem ,Diem_tb).
+		averager(Ds_diem ,Diem_tb),		
+		write("Diem trung binh: ", Diem_tb), nl,.
 	
 	dua_ra_loi_khuyen_tung_mon :-
 		findall(Mon, diem_mon_hoc(Mon, _), Ds_mon),
@@ -298,29 +343,20 @@ clauses
 		write("Dat loai Yeu"), nl;
 		Diem_tb < 4.0,
 		write("Dat loai Kem"), nl.
+	
 		
-s :- prepare,
-	write("Hay nhap ten cua ban: "),
-	readln(Name),
-	assert(ten_nguoi_dung(Name)),
-	ktraten(Name, IsValidName),
-	%write("IsValidName = ", IsValidName), nl,
-	IsValidName <> -1, % Neu ten khong hop le
-		retract(ten_nguoi_dung(Name)),
-		write("Ten khong hop le! Ket thuc chuong trinh."), nl		
-	;
+	loi_cam_on :-
+		ten_nguoi_dung(Name),
+		write("Cam on ", Name, " da su dung chuong trinh cua nhom 2!\n").
+		
+s :- checking_prepare,
+	nhap_ten_nguoi_dung,
 	nhap_nam_va_ki,
-	nam_hoc_nguoi_dung(Nam),
-	hoc_ki_nguoi_dung(Ki),
-	write("Nam: ", Nam, "; Ki: ", Ki), nl,
-	lay_ds_mon(Nam, Ki, Ds_mon),
-	nhap_diem(Ds_mon),
+	nhap_diem_mon_hoc,
 	tinh_tb(Diem_tb),
-	write("Diem trung binh: ", Diem_tb), nl,
 	dua_ra_loi_khuyen_tung_mon,
 	dua_ra_loi_khuyen_tong_quat(Diem_tb),
-	ten_nguoi_dung(Name),
-	write("Cam on ", Name, " da su dung chuong trinh cua nhom 2!\n"),
-	clear_db.
-
+	loi_cam_on,
+	clear_db2.
+goal s
  
