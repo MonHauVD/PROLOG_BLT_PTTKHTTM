@@ -1,0 +1,28 @@
+Cú pháp đặt tên: X _ năm _ kì _ học loại (mục đích để không bị trùng tên biến).
+
+X11Gioi = "",
+Y11Gioi = "",
+concat(X11Gioi, Y11Gioi, Z11Gioi),
+X11Kha = "",
+Y11Kha = "",
+concat(X11Kha, Y11Kha, Z11Kha),
+X11TB = "",
+Y11TB = "",
+concat(X11TB, Y11TB, Z11TB),
+X11Yeu = "",
+Y11Yeu = "",
+concat(X11Yeu, Y11Yeu, Z11Yeu),
+X11Kem = "",
+Y11Kem = "",
+concat(X11Kem, Y11Kem, Z11Kem),
+assert(mon_hoc(6, 1, "A61", Z11Gioi, Z11Kha, Z11TB, Z11Yeu, Z11Kem)),
+
+ví dụ cho cộng n string
+X11Gioi_1 = "",
+Y11Gioi_1 = "",
+concat(X11Gioi_1, Y11Gioi_1, Z11Gioi_1),
+Y11Gioi_2 = "",
+concat(Z11Gioi_1, Y11Gioi_2, Z11Gioi_2),
+,....
+concat(Z11Gioi_n-1, Y11Gioi_n-1, Z11Gioi_n),
+assert(mon_hoc(6, 1, "A61", Z11Gioi_n, Z11Kha, Z11TB, Z11Yeu, Z11Kem)),

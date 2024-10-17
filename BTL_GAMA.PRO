@@ -88,12 +88,33 @@ clauses
 		assert(ten_ko_hop_le("xam")),
 		assert(ten_ko_hop_le("ga")),
 		assert(ten_ko_hop_le("con")),
-
+		
+		X = "Gioi Ban da nam chac kien thuc. Hay doc Tu ban cua Karl Marx de hieu sau hon ve kinh te hoc chinh tri. Ban da nam chac kien thuc. Hay doc Tu ban cua Karl Marx de hieu sau hon ve kinh te hoc chinh tri.",
+		Y = "Ban can on lai cac khai niem co ban. Tap trung hoc theo chu de va lam bai tap thuong xuyen de cai thien ket qua. Ban nen danh thoi gian cho kien thuc nen voi Nhap mon Triet hoc Mac-Lenin ket hop voi hoc nhom de dat hieu qua tot.",
+		concat(X, Y, R),
+		X2 = "Kha Ban da nam chac kien thuc. Hay doc Tu ban cua Karl Marx de hieu sau hon ve kinh te hoc chinh tri. Ban da nam chac kien thuc. Hay doc Tu ban cua Karl Marx de hieu sau hon ve kinh te hoc chinh tri.",
+		Y2 = "Ban can on lai cac khai niem co ban. Tap trung hoc theo chu de va lam bai tap thuong xuyen de cai thien ket qua. Ban nen danh thoi gian cho kien thuc nen voi Nhap mon Triet hoc Mac-Lenin ket hop voi hoc nhom de dat hieu qua tot.",
+		concat(X, Y, R2),
+		assert(mon_hoc(6, 1, "A61", R, R2, "TBA12", "YeuA12", "KemA12")),
 	
 		assert(mon_hoc(1, 1, "Triet hoc Mac-Lenin", "Ban da nam chac kien thuc. Hay doc Tu ban cua Karl Marx de hieu sau hon ve kinh te hoc chinh tri.", "Ban co nen tang tot, co gang lien he kien thuc voi thuc tien nhieu hon de hoc tot mon nay hon nhe.", "Ban can on lai cac khai niem co ban. Tap trung hoc theo chu de va lam bai tap thuong xuyen de cai thien ket qua.", "Ban nen danh thoi gian cho kien thuc nen voi Nhap mon Triet hoc Mac-Lenin ket hop voi hoc nhom de dat hieu qua tot.", "Ban nen nho giang vien ho tro, ket hop doc Giao trinh Triet hoc dai cuong va len ke hoach hoc hang ngay voi So tay Triet hoc cho nguoi moi de tranh don kien thuc.")),
 		assert(mon_hoc(1, 1, "Tin hoc co so 1", "Ban da hoc rat tot! Hay doc Computer Science: An Overview cua J. Glenn Brookshear de mo rong kien thuc.", "Ban co nen tang tot, nen kham pha them cac ung dung thuc te qua Tin hoc dai cuong cua Tran Dinh Que de nang cao trinh do.", "Ban can on tap lai cac khai niem co ban. Doc Introduction to Computer Science cua Goel de cu cung va thu lap so do tu duy de he thong hoa cac khai niem da hoc.", "Ban gap kho khan voi kien thuc nen. Bat dau voi Computer Basics for Beginners va nen nho ban be hoac giang vien giai thich lai cac phan chua hieu.", "Hay tap trung vao nhung khai niem co ban nhat. Doc Giao trinh Tin hoc co so. Len ke hoach hoc hang ngay va thuc hanh thuong xuyen de theo kip tien do.")),
 		assert(mon_hoc(1, 1, "Giai tich 1", "Ban da hoc rat tot! Hay thu thach ban than voi cac bai tap nang cao tu Giai tich 1 cua Nguyen Dinh Tri va tim hieu sau ve ung dung giai tich trong cac nganh khoa hoc va ky thuat.", "Ban co nen tang tot. Hay doc Introduction to Calculus and Analysis cua Richard Courant de nam chac phuong phap giai tich va tang cuong lam bai tap.", "Ban can tap trung hon vao cac khai niem dao ham va tich phan co ban. Su dung Calculus Made Easy cua Silvanus Thompson de hieu de hon cac cong thuc. Dong thoi on lai ly thuyet va lam bai tap tu Giao trinh Giai tich 1 cua Le Van Tien de cai thien.", "Ban gap kho khan voi kien thuc nen. Bat dau voi cac dang bai don gian nhat ve dao ham. Hoc tung buoc qua Basic Calculus cua Deborah Hughes-Hallett de khong bi ngop.", "Ban nen su dung Giai tich co ban cho nguoi moi bat dau de cuong co nen tang. Len ke hoach hoc tap hang ngay, chia nho cac phan ly thuyet va thuc hanh tung ngay.")),
 		assert(mon_hoc(1, 1, "Dai so", "Ban hoc rat tot! Doc them Linear Algebra and Its Applications cua David Lay de nang cao kien thuc va ren tu duy toan hoc voi Giao trinh Dai so cua Nguyen Tien Dung. Sau do, hay thu ap dung dai so vao do thi va hinh hoc de mo rong hieu biet.", "Ban co nen tang vung. Thuc hanh them voi Introduction to Linear Algebra cua Gilbert Strang va tang cuong giai bai tap qua Bai tap Dai so tuyen tinh cua Le Van Thang. Hay co gang nam vung khong gian vector va ma tran de chuan bi cho mon hoc tiep theo.", "Ban nen on lai cac phep bien doi ma tran va he phuong trinh tuyen tinh co ban. Hoc qua vi du trong Algebra for Beginners cua Israel Gelfand va lam them cac bai tap tu Giao trinh Dai so co ban cua Nguyen Dinh Tri.", "Ban gap kho khan voi cac khai niem nen tang. Hay on tap voi Basic Linear Algebra. Tap trung vao cac bai tap don gian nhat de khong bi ngop de cai thien mon hoc.", "Ban nen bat dau voi Dai so co ban cho nguoi moi hoc de nam vung kien thuc nen. Chia nho thoi gian hoc de on tap tung chu de mot cach deu dan va len ke hoach hoc hang ngay de theo kip tien do mon hoc.")),
+		
+		Z62Gioi_0 = "loi khuyen Gioi dfasgsdgsdfsedfasgsdgsdfsedfhsjghwrjkgfhskdhgsfjksdhjksdflkdnjk;sdnfdl;anddfasgsdgsdfsedfhsjghwrjkgfhskdhgsfjksdhjksdflkdnjk;sdnfdl;anddfasgsdgsdfsedfhsjghwrjkgfhskdhgsfjksdhjksdflkdnjk;sdnfdl;anddfasgsdgsdfsedfhsjghwrjkgfhskdhgsfjksd",
+		Y62Gioi_1 = "hjksdflkdnjk;sdnfdl;anddfasgsdgsdfsedfhsjghwrjkgfhskdhgsfjksdhjksdflkdnjk;sdnfdl;anddfasgsdgsdfsedfhsjghwrjkgfhskdhgsfjksdhjksdflkdnjk;sdnfdl;anddfasgsdgsdfsedfhsjghwrjkgfhskdhgsfjksdhjksdflkdnjk;sdnfdl;anddfasgsdgsdfsedfhsjghwrjkgfhskdhgsfjksdhjksdf",
+		concat(Z62Gioi_0, Y62Gioi_1, Z62Gioi_1),
+		Y62Gioi_2 = "lkdnjk;sdnfdl;anddfasgsdgsdfsedfhsjghwrjkgfhskdhgsfjksdhjksdflkdnjk;sdnfdl;anddfhsjghwrjkgfhskdhgsfjksdhjksdflkdnjk;sdnfdl;anddfasgsdgsdfsedfhsjghwrjkgfhskdhgsfjksdhjksdflkdnjk;sdnfdl;anddfasgsdgsdfsedfhsjghwrjkgfhskdhgsfjksdhjksdflkdnjk;sdnfdl;anddf",
+		concat(Z62Gioi_1, Y62Gioi_2, Z62Gioi_2),
+		Y62Gioi_3 = "asgsdgsdfsedfhsjghwrjkgfhskdhgsfjksdhjksdflkdnjk;sdnfdl;anddfasgsdgsdfsedfhsjghwrjkgfhskdhgsfjksdhjksdflkdnjk;sdnfdl;and",
+		concat(Z62Gioi_2, Y62Gioi_3, Z62Gioi_3),
+		Z62Kha_1 = "loi khuyen Kha dfasgsdgsdfsedfhsjghwrjkgfhskdhgsfjksdhjksdflkdnjk;sdnfdl;anddfasgsdgsdfsedfhsjghwrjkgfhskdhgsfjksdhjksdflkdnjk;sdnfdl;and",
+		Z62Tb_1 = "loi khuyen trung binh",
+		Z62Yeu_1 = "loi khuyen Yeu",
+		Z62Kem_1 = "loi khuyen Kem",
+		assert(mon_hoc(6, 2, "Mon hoc 62", Z62Gioi_3, Z62Kha_1, Z62Tb_1, Z62Yeu_1, Z62Kem_1)),
+
 
 		
 		assert(mon_hoc(1, 2, "A12", "GioiA12", "KhaA12", "TBA12", "YeuA12", "KemA12")),
