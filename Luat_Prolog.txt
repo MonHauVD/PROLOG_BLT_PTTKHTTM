@@ -43,8 +43,8 @@ assert(mon_hoc(1, 1, "Dai so",
 
 
 assert(mon_hoc(1, 2, "Kinh te chinh tri Mac-Lenin", 
-    "Ban da nam vung kien thuc! Hay doc Tu ban cua Karl Marx de mo rong kien thuc va hieu sau hon ve nen tang kinh te hoc chinh tri va thu ap dung cac ly thuyet vao phan tich kinh te thuc te de thay ro su van dung cua Kinh te chinh tri Mac-Lenin trong cuoc song.", 
-    "Ban co nen tang tot. Hay doc Introduction to Marxist Economic Theory cua Ernest Mandel de cuong co va mo rong kien thuc va tap trung vao viec phan tich cac hien tuong kinh te hien tai duoi goc nhin Mac-Lenin de tiep tuc phat trien kien thuc chuyen sau.", 
+    "Ban da nam vung kien thuc! Hay doc Tu ban cua Karl Marx de mo rong kien thuc va hieu sau hon ve nen tang kinh te hoc chinh tri, ap dung cac ly thuyet vao phan tich kinh te thuc te de thay ro su van dung cua KTCT Mac-Lenin trong cuoc song.", 
+    "Ban co nen tang tot. Hay doc Introduction to Marxist Economic Theory cua Ernest Mandel de cung co, mo rong kien thuc va tap trung vao viec phan tich cac hien tuong kinh te hien tai duoi goc nhin Mac-Lenin.", 
     "Ban can on lai cac khai niem co ban. Hay thuc hanh phan tich cac bai toan kinh te don gian de hieu ro hon cac khai niem. Ket hop voi lam bai tap va doc lai ly thuyet tu Giao trinh Kinh te chinh tri Mac-Lenin cua Nguyen Van Thuong de cai thien.", 
     "Ban gap kho khan voi kien thuc nen. Bat dau voi cac khai niem tu Gioi thieu ve Kinh te chinh tri. Nho su giup do tu giang vien va ban be de hieu ro hon cac phan chua nam vung. Nen hoc tung buoc mot qua Kinh te chinh tri co ban de khong bi ngop.",
     "Ban nen bat dau voi Kinh te chinh tri cho nguoi moi bat dau de nam vung kien thuc nen. Len ke hoach hoc hang ngay, chia nho cac phan ly thuyet va thuc hanh tung ngay de tranh don kien thuc. Hay co gang hon nhe!")),

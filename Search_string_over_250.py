@@ -1,5 +1,5 @@
 import re
-f = open("C:/PROLOG/BTL_git/Luat_Prolog_Loclam.txt", "r")
+f = open("C:/PROLOG/BTL_git/Luat_Prolog.txt", "r")
 inputString = f.read()
 strs = re.findall(r'"([^"]*)"', inputString)
 str_len_over_250 = []
