@@ -1,5 +1,6 @@
 # PROLOG_BLT_PTTKHTTM
-[![en](https://img.shields.io/badge/lang-pt--br-green.svg)](https://github.com/MonHauVD/PROLOG_BLT_PTTKHTTM/blob/main/README-EN.md)
+[![en](https://img.shields.io/badge/lang-en-green.svg)](https://github.com/MonHauVD/PROLOG_BLT_PTTKHTTM/blob/main/README-EN.md)
+
 Bài tập lớn nhóm 03 - Phân tích thiết kế hệ thống thông minh - ES PROLOG
 
 # Chủ đề
