@@ -106,8 +106,8 @@ clauses
 	
 	len_list([], 0) :- !.
 	len_list([_|T], Len) :-
-len_list(T, Len1),
-Len = Len1 + 1.
+		len_list(T, Len1),
+		Len = Len1 + 1.
 	
 	
 
@@ -170,7 +170,8 @@ Len = Len1 + 1.
 		%write("IsValidName = ", IsValidName), nl,
 		IsValidName <> -1, % Neu ten khong hop le
 			retract(ten_nguoi_dung(Name)),
-			write("Ten khong hop le! Ket thuc chuong trinh."), nl
+			write("Ten khong hop le! Vui long nghiem tuc."), nl,
+			nhap_ten_nguoi_dung
 		;!.
 	
 	ktraten(S0, Res) :-
