@@ -7,9 +7,9 @@ def split_250(str0, Hoc_loai, Nam, Ki, Mon_hoc):
     while (len(str0) - it > 0):
         cnt += 1
         last = min(it + 250, len(str0))
-        Y = "Y" + str(Nam) + str(Ki) + str(Mon_hoc).replace(" ", "_")  + str(Hoc_loai) + "_" + str(cnt)
+        Y = "Y" + str(Nam) + str(Ki) + "".join(next(zip(*str(Mon_hoc).upper().split())))+ "_" +  str(Hoc_loai) + "_" + str(cnt)
         Res = Res + Y + ' = "' + str0[it:last] + '",\n'
-        Znew = "Z" + str(Nam) + str(Ki) + str(Mon_hoc).replace(" ", "_") + str(Hoc_loai) + "_" + str(cnt)
+        Znew = "Z" + str(Nam) + str(Ki) + "".join(next(zip(*str(Mon_hoc).upper().split())))+ "_" +  str(Hoc_loai) + "_" + str(cnt)
         Res = Res + "concat(" + Z + ", " + Y + ", " + Znew +"),\n"
         Z = Znew
         it += 250
@@ -17,14 +17,19 @@ def split_250(str0, Hoc_loai, Nam, Ki, Mon_hoc):
 
 
 
-Nam = 6
-Ki = 2
-Mon_hoc = "Giai tich"
-Gioi = "loi khuyen Gioi dfasgsdgsdfsedfasgsdgsdfsedfhsjghwrjkgfhskdhgsfjksdhjksdflkdnjk;sdnfdl;anddfasgsdgsdfsedfhsjghwrjkgfhskdhgsfjksdhjksdflkdnjk;sdnfdl;anddfasgsdgsdfsedfhsjghwrjkgfhskdhgsfjksdhjksdflkdnjk;sdnfdl;anddfasgsdgsdfsedfhsjghwrjkgfhskdhgsfjksdhjksdflkdnjk;sdnfdl;anddfasgsdgsdfsedfhsjghwrjkgfhskdhgsfjksdhjksdflkdnjk;sdnfdl;anddfasgsdgsdfsedfhsjghwrjkgfhskdhgsfjksdhjksdflkdnjk;sdnfdl;anddfasgsdgsdfsedfhsjghwrjkgfhskdhgsfjksdhjksdflkdnjk;sdnfdl;anddfasgsdgsdfsedfhsjghwrjkgfhskdhgsfjksdhjksdflkdnjk;sdnfdl;anddfasgsdgsdfsedfhsjghwrjkgfhskdhgsfjksdhjksdflkdnjk;sdnfdl;anddfhsjghwrjkgfhskdhgsfjksdhjksdflkdnjk;sdnfdl;anddfasgsdgsdfsedfhsjghwrjkgfhskdhgsfjksdhjksdflkdnjk;sdnfdl;anddfasgsdgsdfsedfhsjghwrjkgfhskdhgsfjksdhjksdflkdnjk;sdnfdl;anddfasgsdgsdfsedfhsjghwrjkgfhskdhgsfjksdhjksdflkdnjk;sdnfdl;anddfasgsdgsdfsedfhsjghwrjkgfhskdhgsfjksdhjksdflkdnjk;sdnfdl;and"
-Kha = "loi khuyen Kha dfasgsdgsdfsedfhsjghwrjkgfhskdhgsfjksdhjksdflkdnjk;sdnfdl;anddfasgsdgsdfsedfhsjghwrjkgfhskdhgsfjksdhjksdflkdnjk;sdnfdl;and"
+Nam = 5
+Ki = 1
+Mon_hoc = "Thuc tap Tot nghiep"
+Gioi = ""
+
+Kha = "Ban co nen tang tot. Hay tim hieu sau hon ve cac quy trinh tai noi thuc tap va co gang hoan thien du an thuc tap cua minh. Luyen tap viet bao cao thuc tap chi tiet, ro rang va tap trung vao cai thien ky nang trinh bay va phan bien de san sang cho buoi bao ve thuc tap."
+
 Tb = "On tap cac khai niem co ban nhu lap trinh socket, giao thuc TCP/UDP va mo hinh client-server. Doc Foundations of Python Network Programming de hieu ro hon ve cach lap trinh mang. Thuc hanh xay dung cac chuong trinh don gian nhu gui va nhan tin nhan giua cac may tinh de lam quen voi giao tiep mang."
+
 Yeu = "loi khuyen Yeu"
-Kem = "loi khuyen Kem"
+
+Kem =  "Ban nen tap trung vao viec hoc hoi tu nhung nhiem vu co ban nhat va tim su giup do tu cac dong nghiep hoac huong dan vien. Doc cac tai lieu co ban lien quan den cong viec ban dang lam. Thuc hien tung buoc nho de hoan thanh cong viec va hoc cach lap ke hoach cong viec hang ngay."
+
 Ans = ""
 
 Z_Gioi = ""

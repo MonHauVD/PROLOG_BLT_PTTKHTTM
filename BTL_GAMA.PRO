@@ -208,15 +208,15 @@ clauses
 			"Kien thuc nen cua ban con yeu. Hay bat dau voi Fundamentals of Distributed Databases de hoc lai cac khai niem nhu phan mang, sao luu va tinh nhat quan. Thuc hanh voi cac vi du de hieu cach du lieu duoc phan phoi va quan ly trong moi truong phan tan.", 
 			"Ban nen hoc lai cac khai niem co ban ve he thong va co so du lieu phan tan. Tap trung vao viec hieu cac van de nhu tinh nhat quan, tinh san sang, va tinh chiu loi, dong thoi thuc hanh voi cac bai tap nho de xay dung nen tang vung chac."
 		)),
-		Z32TTCSYeu_0 = "Ban nen tap trung vao viec hoc hoi tu nhung nhiem vu co ban nhat va tim su giup do tu cac dong nghiep hoac huong dan vien. Doc cac tai lieu co ban lien quan den cong viec ban dang lam.",
-		Y32TTCSYeu_1 = " Thuc hien tung buoc nho de hoan thanh cong viec va hoc cach lap ke hoach cong viec hang ngay.",
-		concat(Z32TTCSYeu_0, Y32TTCSYeu_1, Z32TTCSYeu_1),
+		Z32TTCS_Kem_0 = "Ban nen tap trung vao viec hoc hoi tu nhung nhiem vu co ban nhat va tim su giup do tu cac dong nghiep hoac huong dan vien. Doc cac tai lieu co ban lien quan den cong viec ban dang lam. Thuc hien tung buoc nho de hoan thanh cong viec va hoc cach lap k",
+		Y32TTCS_Kem_1 = "e hoach cong viec hang ngay.",
+		concat(Z32TTCS_Kem_0, Y32TTCS_Kem_1, Z32TTCS_Kem_1),
 		assert(mon_hoc(3, 2, "Thuc tap co so", 
 			"Ban da nam vung kien thuc thuc te! Hay tiep tuc phat trien bang cach tham gia vao cac du an thuc te tai cong ty hoac to chuc lien quan den linh vuc cua ban va hay tu tin chu dong trong cac du an ban tham gia.", 
 			"Ban co nen tang tot. Hay tiep tuc thuc hanh nhieu hon trong moi truong thuc te va co gang tim hieu sau hon ve quy trinh lam viec cua cong ty hoac to chuc. Thuc hanh cac ky nang nhu viet bao cao, ghi chep tien do cong viec, va quan ly du an nho.", 
 			"Ban can tap trung hon vao viec lam quen voi moi truong thuc te. Ban nen doc cuon The Internship Bible de hoc cach quan ly thoi gian, ghi chep va lap ke hoach cong viec hieu qua.", 
 			"Ban nen bat dau bang cach hoc tu cac dong nghiep, hoi them ve quy trinh cong viec va lam quen voi cac cong cu co ban trong moi truong thuc tap. Tap trung vao viec hieu ro nhiem vu cua minh va cai thien kha nang lam viec doc lap.", 
-			Z32TTCSYeu_1
+			Z32TTCS_Kem_1
 		)),
 
 
@@ -249,10 +249,13 @@ clauses
 			"Ban nen doc cuon Introduction to Machine Learning with Python de hoc lai cac khai niem nhu hoc co giam sat, khong giam sat va cac mo hinh co ban sau do thuc hanh voi cac vi du don gian de hieu cach cac he thong thong minh hoat dong.", 
 			"Ban nen tap trung vao cac khai niem co ban nhu mo hinh hoc may, xu ly du lieu va xay dung cac mo hinh du doan don gian. Thuc hanh voi cac bai tap co ban de lam quen voi cac cong cu nhu Python, scikit-learn va TensorFlow."
 		)),
+		Z41LTM_Tb_0 = "On tap cac khai niem co ban nhu lap trinh socket, giao thuc TCP/UDP va mo hinh client-server. Doc Foundations of Python Network Programming de hieu ro hon ve cach lap trinh mang. Thuc hanh xay dung cac chuong trinh don gian nhu gui va nhan tin nhan g",
+		Y41LTM_Tb_1 = "iua cac may tinh de lam quen voi giao tiep mang.",
+		concat(Z41LTM_Tb_0, Y41LTM_Tb_1, Z41LTM_Tb_1),
 		assert(mon_hoc(4, 1, "Lap trinh mang", 
 			"Ban da nam vung kien thuc lap trinh mang! Hay doc Unix Network Programming cua W. Richard Stevens de hieu sau hon ve cac giao thuc mang, lap trinh socket nang cao va xu ly da luong.", 
-			"Ban co nen tang tot. Doc them Java Network Programming cua Elliotte Rusty Harold hoac Python Network Programming Cookbook de cung co kien thuc va xay dung cac ung dung mang nhu ", 
-			"On tap cac khai niem co ban nhu lap trinh socket, giao thuc TCP/UDP va mo hinh client-server. Doc Foundations of Python Network Programming de hieu ro hon ve cach lap .", 
+			"Ban co nen tang tot. Doc them Java Network Programming cua Elliotte Rusty Harold hoac Python Network Programming Cookbook de cung co kien thuc va xay dung cac ung dung mang nhu chat server-client don gian de hieu ro cach cac giao thuc hoat dong.", 
+			Z41LTM_Tb_1,
 			"Kien thuc nen con yeu. Hay bat dau voi Beej's Guide to Network Programming de hoc lai cac khai niem co ban nhu socket, dia chi IP va cong. Thuc hanh voi cac vi du don gian ve giao tiep giua client-server de hieu ro cach thiet lap va xu ly ket noi.", 
 			"Ban nen tap trung vao cac khai niem co ban nhu socket, giao thuc TCP/UDP, va lap trinh client-server. Thuc hanh bang cach xay dung cac chuong trinh don gian nhu chat app co ban de hieu cach mang may tinh hoat dong va lam quen voi cac giao thuc mang."
 		)),
@@ -294,9 +297,12 @@ clauses
 			"Kien thuc nen cua ban con yeu. Ban nen hoc lai cac khai niem co ban ve kien truc phan mem, tu mo hinh hoa den thiet ke he thong. Sau do thiet ke cac he thong don gian va hoc cach ap dung cac nguyen tac thiet ke vao thuc te.", 
 			"Ban nen doc cuon Introduction to Software Architecture de hieu cac khai niem nhu phan lop, mo hinh MVC, va cac nguyen ly thiet ke co ban. Sau do tao cac du an nho va ap dung cac mau thiet ke don gian de xay dung nen tang kien thuc vung chac."
 		)),
+		Z42CDCNPM_Kha_0 = "Ban co nen tang tot. Hay doc them cuon Software Architecture Patterns cua Mark Richards de hieu ro hon ve cac mo hinh kien truc phan mem va hay tham gia vao cac du an nhom de thuc hanh trien khai cac he thong phan mem phuc tap va cai thien ky nang la",
+		Y42CDCNPM_Kha_1 = "m viec nhom.",
+		concat(Z42CDCNPM_Kha_0, Y42CDCNPM_Kha_1, Z42CDCNPM_Kha_1),
 		assert(mon_hoc(4, 2, "Chuyen de cong nghe phan mem", 
 			"Ban da nam vung kien thuc ve cong nghe phan mem! Hay doc Continuous Delivery cua Jez Humble de tim hieu them ve DevOps va cac phuong phap trien khai phan mem hien dai.", 
-			"Ban co nen tang tot. Hay doc them cuon Software Architecture Patterns cua Mark Richards de hieu ro hon ve cac mo hinh kien truc phan mem va hay tham gia vao cac du an nhom de thuc hanh trien khai cac he thong phan mem phuc tap va cai thien ky nang lam viec nhom.", 
+			Z42CDCNPM_Kha_1,
 			"Ban hay on tap lai cac khai niem co ban ve kien truc phan mem, quan ly vong doi phan mem va kiem thu tu dong sau do thuc hanh voi cac du an nho de hieu ro cach ap dung ly thuyet vao thuc te.", 
 			"Ban hay hoc lai cac khai niem co ban nhu quy trinh phat trien phan mem, kiem thu va bao tri phan mem. Thuc hanh bang cach tham gia vao cac du an nho de hieu cach van hanh cong nghe phan mem.", 
 			"Ban nen tap trung vao cac buoc phat trien phan mem tu lap ke hoach den kiem thu va bao tri. Thuc hanh voi cac bai tap nho de hieu ro cach phat trien va quan ly du an phan mem."
@@ -315,10 +321,12 @@ clauses
 			"Kien thuc nen cua ban con yeu. Hay bat dau lai voi cuon Service-Oriented Architecture for Dummies de hoc lai cac khai niem nhu thiet ke dich vu va cach ket noi cac dich vu voi nhau.", 
 			"Ban nen tap trung vao cac khai niem co ban nhu API, dich vu RESTful va cach to chuc he thong huong dich vu. Thuc hanh phat trien cac du an nho, tap trung vao viec xay dung cac dich vu co ban va tich hop chung vao he thong lon hon."
 		)),
-
+		Z51TTTN_Kha_0 = "Ban co nen tang tot. Hay tim hieu sau hon ve cac quy trinh tai noi thuc tap va co gang hoan thien du an thuc tap cua minh. Luyen tap viet bao cao thuc tap chi tiet, ro rang va tap trung vao cai thien ky nang trinh bay va phan bien de san sang cho buo",
+		Y51TTTN_Kha_1 = "i bao ve thuc tap.",
+		concat(Z51TTTN_Kha_0, Y51TTTN_Kha_1, Z51TTTN_Kha_1),
 		assert(mon_hoc(5, 1, "Thuc tap Tot nghiep", 
 			"Ban da nam vung kien thuc va ky nang trong thuc tap! Hay doc cuon The Effective Executive cua Peter Drucker de nang cao ky nang lam viec va quan ly thoi gian. Chuan bi ky luong cho bao cao thuc tap va tu tin thuyet trinh ket qua truoc hoi dong.", 
-			"Ban co nen tang tot. Hay tim hieu sau hon ve cac quy trinh tai noi thuc tap va co gang hoan thien du an thuc tap cua minh. Luyen tap viet bao cao thuc tap chi tiet, ro rang va tap trung vao cai thien ky nang trinh bay va phan bien de san sang cho buoi bao ve thuc tap.", 
+			Z51TTTN_Kha_1,
 			"Ban can tap trung hon vao viec thuc hien cac nhiem vu thuc te tai noi thuc tap. Hay chu dong yeu cau gop y tu nguoi huong dan de hoan thien du an va chuan bi bao cao thuc tap can than.", 
 			"Kien thuc va ky nang thuc te cua ban con han che. Hay chu trong vao viec hoc hoi them tu nhung nhiem vu thuc te nho va tap trung vao viec hoan thanh tung phan cua bao cao thuc tap mot cach chi tiet, tu tu xay dung ky nang lam viec doc lap.", 
 			"Ban can co gang nhieu hon trong viec thuc hien cac nhiem vu thuc tap. Hay tim hieu ky cac yeu cau cua bao cao thuc tap va nho su giup do tu nguoi huong dan. Chia nho cac nhiem vu va lap ke hoach cu the de hoan thanh du an thuc tap dung thoi han."
