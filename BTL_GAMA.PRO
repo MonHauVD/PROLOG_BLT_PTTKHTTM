@@ -309,7 +309,7 @@ clauses
 	
 	loi_cam_on :-
 		ten_nguoi_dung(Name),
-		write("Cam on ", upper_lower(Name), " da su dung chuong trinh cua nhom 2!\n").
+		write("Cam on ", Name, " da su dung chuong trinh cua nhom 2!\n").
 		
 s :- checking_prepare,
 	nhap_ten_nguoi_dung,
