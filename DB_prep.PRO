@@ -7,8 +7,10 @@ database
     hoc_ki_nguoi_dung(integer)
     diem_mon_hoc(symbol, real)
 	ten_ko_hop_le(symbol)
+	luu_loi_khuyen_db(integer,string, string)
 	% mon_hoc(Nam_hoc, Hoc_ki, Ten_mon, Cac loi khuyen Gioi, Kha, TB, Yeu, Kem)
 	mon_hoc(integer, integer, string, string, string, string, string, string)
+	loi_khuyen_tong_quat(string, string)
 clauses 
     prepare :-
         assert(is_prepared(1)),
@@ -29,7 +31,6 @@ clauses
         assert(ten_ko_hop_le("di")),
         assert(ten_ko_hop_le("xam")),
         assert(ten_ko_hop_le("ga")),
-        assert(ten_ko_hop_le("con")),
 
         assert(mon_hoc(1, 1, "Triet hoc Mac-Lenin",
             "Ban da nam chac kien thuc. Hay doc Tu ban cua Karl Marx de hieu sau hon ve kinh te hoc chinh tri.",
@@ -386,5 +387,31 @@ clauses
             "Ban can tap trung hon vao viec thuc hien cac nhiem vu thuc te tai noi thuc tap. Hay chu dong yeu cau gop y tu nguoi huong dan de hoan thien du an va chuan bi bao cao thuc tap can than.", 
             "Kien thuc va ky nang thuc te cua ban con han che. Hay chu trong vao viec hoc hoi them tu nhung nhiem vu thuc te nho va tap trung vao viec hoan thanh tung phan cua bao cao thuc tap mot cach chi tiet, tu tu xay dung ky nang lam viec doc lap.", 
             "Ban can co gang nhieu hon trong viec thuc hien cac nhiem vu thuc tap. Hay tim hieu ky cac yeu cau cua bao cao thuc tap va nho su giup do tu nguoi huong dan. Chia nho cac nhiem vu va lap ke hoach cu the de hoan thanh du an thuc tap dung thoi han."
-        ))
-        ;!.
+        )),
+		
+		XGioi0 = "Ban da co mot ket qua xuat sac. Hay tiep tuc duy tri dong luc, cai thien nhung diem yeu con lai va dung quen giup do nhung nguoi khac neu co the. ",
+		YGioi0 = "Ban cung co the dat ra nhung muc tieu cao hon nhu tham gia cac du an nghien cuu, thi dau hoc thuat, hoac phat trien cac ky nang mem nhu giao tiep va lam viec nhom.",
+		concat(XGioi0, YGioi0, ZGioi0),
+		assert(loi_khuyen_tong_quat("Gioi", ZGioi0)),
+
+		XKha0 = "Ban dang co mot nen tang vung chac, nhung van co khong gian de cai thien. Hay tap trung vao nhung mon ma ban con yeu de can bang diem so. ",
+		YKha0 = "Thu ap dung cac phuong phap hoc tap hieu qua hon nhu hoc nhom, dat cau hoi va tim kiem su giup do tu giang vien hoac ban be. Ngoai ra, tham gia vao cac hoat dong ngoai khoa se giup ban mo rong ky nang thuc te.",
+		concat(XKha0, YKha0, ZKha0),
+		assert(loi_khuyen_tong_quat("Kha", ZKha0)),
+
+
+		XTB0 = "Muc diem nay cho thay ban can no luc hon trong viec hieu va nam vung kien thuc. Hay xem lai phuong phap hoc tap cua minh, thu tim cach hoc moi me nhu on tap qua mindmap, lam bai tap theo nhom, hoac xem cac video huong dan. ",
+		YTB0 = "Ban cung co the hoi giang vien de xin loi khuyen ve viec cai thien. Dung nan chi, day chi la mot buoc nho tren hanh trinh hoc tap dai han.",
+		concat(XTB0, YTB0, ZTB0),
+		assert(loi_khuyen_tong_quat("TB", ZTB0)),
+
+		XYeu0 = "Ban can phai no luc hon nua trong viec hoc tap. Hay tu hoi xem nguyen nhan nao dan den tinh trang nay, co the la do thieu dong luc hoac phuong phap hoc chua phu hop. ",
+		YYeu0 = "Tim kiem su giup do tu giang vien hoac cac khoa hoc bo sung se la buoc di dung de cai thien.",
+		concat(XYeu0, YYeu0, ZYeu0),
+		assert(loi_khuyen_tong_quat("Yeu", ZYeu0)),
+
+		XKem0 = "Ban can thuc su danh gia lai hoan toan qua trinh hoc tap cua minh. Day la luc de lien he truc tiep voi giang vien hoac nguoi co kinh nghiem de xin loi khuyen va su giup do. ",
+		YKem0 = "Viec tham gia vao cac khoa hoc bo sung hoac hoc them cung se giup ban cung co kien thuc co ban va de dang hon trong viec lay lai phong do.",
+		concat(XKem0, YKem0, ZKem0),
+		assert(loi_khuyen_tong_quat("Kem", ZKem0))
+		;!.

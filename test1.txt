@@ -1,0 +1,6 @@
+
+clause
+:- pred imem(integer,list(integer)).
+:- pred member(T,list(T)).
+p :- imem(not_an_int,[1,2,3]).
+q :- member(not_an_int,[1,2,3]).

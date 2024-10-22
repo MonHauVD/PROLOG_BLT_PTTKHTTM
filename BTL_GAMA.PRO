@@ -54,6 +54,7 @@ predicates
 	
 	loi_khuyen(as, ar)
 	loi_khuyen1(sb, r)
+	luu_loi_khuyen(string, string) %luu_loi_khuyen(ten_mon, loi_khuyen)
 	loi_cam_on
 	
 	clear_db
@@ -213,8 +214,9 @@ clauses
 		nhap_diem_lai([H|T]).
 	nhap_diem_lai([H|T]) :-
 		write("Dieu kien 0 <= diem <= 10\nNhap lai diem mon: ", H), nl,
-		readreal(Diem),
-		ktra_diem_nhap(Diem, [H|T]).
+		readreal(Diem2),
+		write("Diem 2: ", Diem2), nl,
+		ktra_diem_nhap(Diem2, [H|T]).
 	
 	
 	lay_ds_diem(Ds_diem) :-
@@ -231,7 +233,7 @@ clauses
 		lay_ds_diem(Ds_diem),
 		%write("Ds diem: ", Ds_diem), nl,
 		averager(Ds_diem ,Diem_tb),		
-		write("Diem trung binh: ", Diem_tb), nl.
+		writef("Diem trung binh: %7.2f", Diem_tb), nl.
 	
 	dua_ra_loi_khuyen_tung_mon :-
 		findall(Mon, diem_mon_hoc(Mon, _), Ds_mon),
@@ -241,47 +243,80 @@ clauses
 	loi_khuyen([],[]) :- !.
 	loi_khuyen([H_mon|T_mon], [H_diem|T_diem]) :-
 		loi_khuyen1(H_mon, H_diem),
+		readchar(_),
 		loi_khuyen(T_mon, T_diem).
 		
 	loi_khuyen1(H_mon, H_diem) :-
 		H_diem >= 8.5,
 		mon_hoc(_, _, H_mon, X, _, _, _, _),
-		write("Loi khuyen cho mon ", H_mon, ": ", X), nl;
+		concat("Loi khuyen cho mon ", H_mon, H_mon_2),
+		luu_loi_khuyen(H_mon_2, X),
+		write("Loi khuyen cho mon ", H_mon, ":\n", X), nl, nl;
 		H_diem >= 7.0,
 		mon_hoc(_, _, H_mon, _, X, _, _, _),
-		write("Loi khuyen cho mon ", H_mon, ": ", X), nl;
+		concat("Loi khuyen cho mon ", H_mon, H_mon_2),
+		luu_loi_khuyen(H_mon_2, X),
+		write("Loi khuyen cho mon ", H_mon, ":\n", X), nl, nl;
 		H_diem >= 5.5,
 		mon_hoc(_, _, H_mon, _, _, X, _, _),
-		write("Loi khuyen cho mon ", H_mon, ": ", X), nl;
+		concat("Loi khuyen cho mon ", H_mon, H_mon_2),
+		luu_loi_khuyen(H_mon_2, X),
+		write("Loi khuyen cho mon ", H_mon, ":\n", X), nl, nl;
 		H_diem >= 4.0,
 		mon_hoc(_, _, H_mon, _, _, _, X, _),
-		write("Loi khuyen cho mon ", H_mon, ": ", X), nl;
+		concat("Loi khuyen cho mon ", H_mon, H_mon_2),
+		luu_loi_khuyen(H_mon_2, X),
+		write("Loi khuyen cho mon ", H_mon, ":\n", X), nl, nl;
 		H_diem < 4.0,
 		mon_hoc(_, _, H_mon, _, _, _, _, X),
-		write("Loi khuyen cho mon ", H_mon, ": ", X), nl.
+		concat("Loi khuyen cho mon ", H_mon, H_mon_2),
+		luu_loi_khuyen(H_mon_2, X),
+		write("Loi khuyen cho mon ", H_mon, ":\n", X), nl, nl.
 	
 	dua_ra_loi_khuyen_tong_quat(Diem_tb):-
 		Diem_tb >= 8.5,
-		write("Dat loai Gioi"), nl;
+		loi_khuyen_tong_quat("Gioi", ZGioi),
+		luu_loi_khuyen("Loi khuyen tong quat:\n", ZGioi),
+		readchar(_),
+		write("Loi khuyen tong quat:\n", ZGioi), nl;
 		Diem_tb >= 7.0,
-		write("Dat loai Kha"), nl;
+		loi_khuyen_tong_quat("Kha", ZKha),
+		luu_loi_khuyen("Loi khuyen tong quat:\n", ZKha),
+		readchar(_),
+		write("Loi khuyen tong quat:\n", ZKha), nl;
 		Diem_tb >= 5.5,
-		write("Dat loai TB"), nl;
+		loi_khuyen_tong_quat("TB", ZTB),
+		luu_loi_khuyen("Loi khuyen tong quat:\n", ZTB),
+		readchar(_),
+		write("=> Loi khuyen tong quat:\n", ZTB), nl;
 		Diem_tb >= 4.0,
-		write("Dat loai Yeu"), nl;
+		loi_khuyen_tong_quat("Yeu", ZYeu),
+		luu_loi_khuyen("Loi khuyen tong quat:\n", ZYeu),
+		readchar(_),
+		write("Loi khuyen tong quat:\n", ZYeu), nl;
 		Diem_tb < 4.0,
-		write("Dat loai Kem"), nl.
+		loi_khuyen_tong_quat("Kem", ZKem),
+		luu_loi_khuyen("Loi khuyen tong quat:\n", ZKem),
+		readchar(_),
+		write("Loi khuyen tong quat:\n", ZKem), nl.
 	
+	luu_loi_khuyen(Mon_hoc_luu, Loi_khuyen_luu) :-
+		findall(Stt, luu_loi_khuyen_db(Stt, _, _), Ds_loi_khuyen),
+		len_list(Ds_loi_khuyen, SttCurr),
+		assert(luu_loi_khuyen_db(SttCurr, Mon_hoc_luu, Loi_khuyen_luu)).
 		
+
+	
 	loi_cam_on :-
 		ten_nguoi_dung(Name),
-		write("Cam on ", Name, " da su dung chuong trinh cua nhom 2!\n").
+		write("Cam on ", upper_lower(Name), " da su dung chuong trinh cua nhom 2!\n").
 		
 s :- checking_prepare,
 	nhap_ten_nguoi_dung,
 	nhap_nam_va_ki,
 	nhap_diem_mon_hoc,
 	tinh_tb(Diem_tb),
+	%retract(luu_loi_khuyen_db(_, _, _)),
 	dua_ra_loi_khuyen_tung_mon,
 	dua_ra_loi_khuyen_tong_quat(Diem_tb),
 	loi_cam_on,
