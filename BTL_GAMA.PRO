@@ -59,6 +59,8 @@ predicates
 	
 	clear_db
 	clear_db2
+	
+	cls %clear scren
 	s
 	
 	
@@ -71,6 +73,9 @@ clauses
 		prepare
 		;!.
 	
+	cls :-
+	write("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"),
+	write(" ").
 	
 	clear_db :-
 		retract(mon_hoc(_, _, _, _, _, _, _, _)),

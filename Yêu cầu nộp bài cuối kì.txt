@@ -1,0 +1,36 @@
+file .zip
+	Tên file Nhóm3.zip
+	Gồm:
+		1. Tệp báo cáo.doc
+		2. Tệp trình chiếu.ppt (10p slide)
+			- Chữ không chân
+			- Đánh số trang dạng x/14 trang
+		3. Tệp chương trình
+		4. Dữ liệu
+	Gửi lên Zalo
+	
+Thi hết môn (Trình bày)
+	1. Cả nhóm lên bảng
+	2. Nộp báo cáo (giảng viên nộp lên Khoa)
+	3. Trình bày 14 slide (10 phút)			(2 điểm)
+	4. Q/A									(2 điểm)
+	5. Nhận điểm
+	
+
+Slide:
+	1. Giới thiệu
+	2. Thành viên
+	3. Đề tài, nhiệm vụ gì
+	4. Dataset (Ở đâu, dòng, cột, hiện 1 phần)
+	5. EDA
+	6.	5.1. Phân bố dữ liệu
+	7.	5.2. Tương quan
+	8.	5.3. Cleansing
+	9.	5.4. Normalization
+	10. Model
+	11. Jupiter
+	12. Độ chính xác
+	13. Kết luận
+		- Đã làm được gì?
+		- Cải thiện trong tương lai
+	14. Cảm ơn
