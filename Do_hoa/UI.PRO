@@ -103,6 +103,7 @@ CLAUSES
     % Ham check nam hoc
     % Replace this
     check_below(Year, Below):-
+        Year >= 1,
         Year <= Below.
 
     nhap_ky_hoc(Term):-
