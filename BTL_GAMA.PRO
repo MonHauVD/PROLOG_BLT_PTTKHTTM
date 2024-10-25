@@ -255,53 +255,53 @@ clauses
 		H_diem >= 8.5,
 		mon_hoc(_, _, H_mon, X, _, _, _, _),
 		concat("Loi khuyen cho mon ", H_mon, H_mon_2),
-		luu_loi_khuyen(H_mon_2, X),
+		%luu_loi_khuyen(H_mon_2, X),
 		write("Loi khuyen cho mon ", H_mon, ":\n", X), nl, nl;
 		H_diem >= 7.0,
 		mon_hoc(_, _, H_mon, _, X, _, _, _),
 		concat("Loi khuyen cho mon ", H_mon, H_mon_2),
-		luu_loi_khuyen(H_mon_2, X),
+		%luu_loi_khuyen(H_mon_2, X),
 		write("Loi khuyen cho mon ", H_mon, ":\n", X), nl, nl;
 		H_diem >= 5.5,
 		mon_hoc(_, _, H_mon, _, _, X, _, _),
 		concat("Loi khuyen cho mon ", H_mon, H_mon_2),
-		luu_loi_khuyen(H_mon_2, X),
+		%luu_loi_khuyen(H_mon_2, X),
 		write("Loi khuyen cho mon ", H_mon, ":\n", X), nl, nl;
 		H_diem >= 4.0,
 		mon_hoc(_, _, H_mon, _, _, _, X, _),
 		concat("Loi khuyen cho mon ", H_mon, H_mon_2),
-		luu_loi_khuyen(H_mon_2, X),
+		%luu_loi_khuyen(H_mon_2, X),
 		write("Loi khuyen cho mon ", H_mon, ":\n", X), nl, nl;
 		H_diem < 4.0,
 		mon_hoc(_, _, H_mon, _, _, _, _, X),
 		concat("Loi khuyen cho mon ", H_mon, H_mon_2),
-		luu_loi_khuyen(H_mon_2, X),
+		%luu_loi_khuyen(H_mon_2, X),
 		write("Loi khuyen cho mon ", H_mon, ":\n", X), nl, nl.
 	
 	dua_ra_loi_khuyen_tong_quat(Diem_tb):-
 		Diem_tb >= 8.5,
 		loi_khuyen_tong_quat("Gioi", ZGioi),
-		luu_loi_khuyen("Loi khuyen tong quat:\n", ZGioi),
+		%luu_loi_khuyen("Loi khuyen tong quat:\n", ZGioi),
 		readchar(_),
 		write("Loi khuyen tong quat:\n", ZGioi), nl;
 		Diem_tb >= 7.0,
 		loi_khuyen_tong_quat("Kha", ZKha),
-		luu_loi_khuyen("Loi khuyen tong quat:\n", ZKha),
+		%luu_loi_khuyen("Loi khuyen tong quat:\n", ZKha),
 		readchar(_),
 		write("Loi khuyen tong quat:\n", ZKha), nl;
 		Diem_tb >= 5.5,
 		loi_khuyen_tong_quat("TB", ZTB),
-		luu_loi_khuyen("Loi khuyen tong quat:\n", ZTB),
+		%luu_loi_khuyen("Loi khuyen tong quat:\n", ZTB),
 		readchar(_),
 		write("=> Loi khuyen tong quat:\n", ZTB), nl;
 		Diem_tb >= 4.0,
 		loi_khuyen_tong_quat("Yeu", ZYeu),
-		luu_loi_khuyen("Loi khuyen tong quat:\n", ZYeu),
+		%luu_loi_khuyen("Loi khuyen tong quat:\n", ZYeu),
 		readchar(_),
 		write("Loi khuyen tong quat:\n", ZYeu), nl;
 		Diem_tb < 4.0,
 		loi_khuyen_tong_quat("Kem", ZKem),
-		luu_loi_khuyen("Loi khuyen tong quat:\n", ZKem),
+		%luu_loi_khuyen("Loi khuyen tong quat:\n", ZKem),
 		readchar(_),
 		write("Loi khuyen tong quat:\n", ZKem), nl.
 	
