@@ -31,6 +31,7 @@ PREDICATES
 CLAUSES
     string_list(["Vat ly ung dung", "Phan tich thiet ke", "He thong thong minh", "Lap trinh web", "Lich su dang", "The chat", "Lap trinh web"]).
     advice(["Vat ly ung dung", "Phan tich thiet ke", "He thong thong minh", "Lap trinh web", "Lich su dang", "The chat", "Lap trinh web"]).
+	
 	main :-
         % can shifwindow(id) de write() vao cua so do.
         % shiftwindow co the lam cac cua so lon hon hien len tren -> che mat cac window nho hon o ben duoi

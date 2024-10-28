@@ -8,6 +8,8 @@ database
     diem_mon_hoc(symbol, real)
 	ten_ko_hop_le(symbol)
 	luu_loi_khuyen_db(integer,string, string)
+	luu_mon_can_tu_van(symbol)
+	luu_mon_tu_van_da_chon(symbol)
 	% mon_hoc(Nam_hoc, Hoc_ki, Ten_mon, Cac loi khuyen Gioi, Kha, TB, Yeu, Kem)
 	mon_hoc(integer, integer, string, string, string, string, string, string)
 	loi_khuyen_tong_quat(string, string)
@@ -331,52 +333,51 @@ clauses
         )),
 
 
+		assert(mon_hoc(4, 2, "The chat", 
+            "Ban dang lam rat tot! Hay duy tri viec tap luyen deu dan de nang cao the luc va cai thien thanh tich. Dung quen bo sung dinh duong va nghi ngoi de co suc khoe tot nhat.", 
+            "Ket qua cua ban kha tot! De dat diem cao hon, ban co the tang cuong cac bai tap suc ben va the luc. Len ke hoach tap luyen deu dan va giu vung tinh than de dat nhieu tien bo", 
+            "Ban co tiem nang phat trien. Hay danh them thoi gian cho cac bai tap co ban va cai thien ky thuat. Lap ke hoach tap luyen deu dan va kien tri se giup ban cai thien diem so", 
+            "Ban can tap trung nhieu hon. Hay bat dau voi cac bai tap nhe nhang va tang dan cuong do. Kien tri luyen tap se giup ban cai thien dan the luc va diem so cua minh.", 
+            "Ket qua hien tai chua tot, nhung dung nan long! Hay nho giao vien hoac ban be ho tro trong viec xay dung ke hoach tap luyen phu hop. Tung buoc cai thien se mang lai su tien bo ro ret."
+        )),
+		assert(mon_hoc(4, 2, "Ki nang thuyet trinh", 
+            "Ban co ky nang thuyet trinh xuat sac! Hay tiep tuc luyen tap de tu tin hon, cai thien ngon ngu co the va kha nang tuong tac voi khan gia. Dieu nay se giup ban tro thanh mot nguoi thuyet trinh cuon hut.", 
+            "Ban co ky nang thuyet trinh tot. De tien xa hon, hay chu y den cach truyen dat cam xuc va kiem soat giong noi. Thuc hanh thuong xuyen se giup ban tu tin va thu hut khan gia hon.", 
+            "Ban da co nen tang tot. Hay danh them thoi gian chuan bi noi dung, luyen tap noi truoc guong hoac truoc ban be de cai thien su tu tin va mach lac trong bai thuyet trinh.", 
+            "Ban can cai thien them. Hay bat dau bang cach tap trung vao noi dung va ro rang trong cach dien dat. Tham gia cac buoi thuyet trinh nhom de hoc hoi va tang su tu tin qua tung lan trinh bay.", 
+            "Ban can no luc nhieu hon. Hay thu luyen tap noi truoc guong va nho ban be gop y. Tham gia lop hoc hoac cau lac bo thuyet trinh se giup ban cai thien su tu tin va cach trinh bay hieu qua hon."
+        )),
+		assert(mon_hoc(4, 2, "Tu tuong Ho Chi Minh",
+            "Ban hoc rat tot! Hay doc them Ho Chi Minh: Toan tap de nghien cuu sau hon ve tu tuong va di san cua Nguoi. Tham gia cac cuoc thi tim hieu ve tu tuong Ho Chi Minh de ren luyen tu duy va ky nang phan tich.",
+            "Ban co nen tang tot. Doc Tu tuong Ho Chi Minh va su nghiep doi moi cua Pham Van Dong de hieu ro hon ve qua trinh ap dung tu tuong vao thuc tien. Lam them cac bai tap tinh huong lien quan den van dung tu tuong Ho Chi Minh trong thoi ky hien dai.",
+            "Ban can on tap lai cac khai niem co ban ve tu tuong cach mang va tu tuong dao duc cua Ho Chi Minh. Doc them Tu tuong Ho Chi Minh: Khai quat va ung dung de cuong co kien thuc nen.",
+            "Ban gap kho khan voi kien thuc nen. Bat dau voi Giao trinh Tu tuong Ho Chi Minh co ban de hieu ro hon cac khai niem cot loi. Tap trung vao cac noi dung don gian nhu tu tuong ve dao duc va loi song cach mang.",
+            "Ban nen bat dau lai tu cac noi dung don gian nhat nhu khai niem ve tinh yeu nuoc va doan ket dan toc. Hoc moi ngay mot it, doc va ghi chu lai nhung diem chinh de de nho hon. Su dung cac tai lieu truc tuyen ve tu tuong Ho Chi Minh de ho tro.")),
+		assert(mon_hoc(4, 2, "Lap trinh huong doi tuong", 
+            "Ban da nam vung kien thuc OOP! Hay doc them Design Patterns: Elements of Reusable Object-Oriented Software cua GoF de nang cao ky nang thiet ke. Thuc hanh xay dung cac du an lon, ap dung cac nguyen tac SOLID va thiet ke mau de viet ma hieu qua.", 
+            "Ban co nen tang tot. Hay doc Object-Oriented Programming in Java cua Rick Halterman de cung co kien thuc va thuc hanh cac nguyen ly OOP nhu ke thua, da hinh, dong goi. Tim hieu cac mau thiet ke va ap dung vao cac bai tap thuc te de phat trien them.", 
+            "Ban hay on tap lai cac khai niem nhu lop, doi tuong, ke thua va da hinh. Doc Introduction to Object-Oriented Programming cua Timothy Budd de hieu ro hon cach ap dung cac nguyen tac OOP. Thuc hanh viet ma voi cac du an nho, tu don gian den phuc tap.", 
+            "Neu muon cai thien ban hay bat dau tu nhung khai niem co ban nhu lop va doi tuong qua sach Java: An Introduction to Problem Solving and OOP cua Walter Savitch. Thuc hanh qua cac vi du de nam ro cac nguyen tac nhu dong goi, ke thua va da hinh.", 
+            "Ban hay doc cuon Starting Out with Java: From Control Structures through Objects cua Tony Gaddis va tap trung vao cac khai niem co ban sau do thuc hanh hang ngay, bat dau cac bai tap tu don gian den phuc tap de xay dung nen tang vung chac."
+        )),
+		assert(mon_hoc(4, 2, "Lap trinh Web", 
+            "Ban da nam vung kien thuc lap trinh web! Hay doc them You Don't Know JS cua Kyle Simpson de hieu sau hon ve JavaScript va cac khia canh nang cao cua lap trinh web. Sau do tu lam cac project fullstack de nang cao trinh do.", 
+            "Ban co nen tang tot. Doc them Eloquent JavaScript va Learning PHP, MySQL & JavaScript de cung co kien thuc ve phat trien full-stack. Hay thu xay dung cac ung dung voi Node.js, Express, hoac PHP va MySQL de hieu cach tich hop front-end voi back-end.", 
+            "Ban hay on tap lai ve HTML, CSS, JavaScript va lam quen voi cac framework nhu Bootstrap, React, hoac Vue.js. Thuc hanh xay dung cac trang web don gian de nam chac cu phap va bo cuc.", 
+            "Kien thuc nen cua ban con yeu. Hay doc cuon Web Design with HTML, CSS, JavaScript and jQuery cua Jon Duckett va sau do thuc hanh xay dung cac trang web tinh don gian va lam quen voi JavaScript de tao cac tinh nang dong.", 
+            "Neu ban muon cai thien hay doc cuon Head First HTML and CSS de hieu cau truc trang web co ban. Thuc hanh viet ma hang ngay de lam quen voi cach tao bo cuc va tinh nang co ban cho mot trang web. Tu tu hoc them ve cac khai niem phuc tap hon."
+        )),
+		assert(mon_hoc(4, 2, "IoT va Ung dung", 
+            "Ban da nam vung kien thuc IoT! Hay doc Building the Internet of Things cua Maciej Kranz de hieu sau hon ve cac kien truc IoT phuc tap va ung dung thuc te.", 
+            "Ban co nen tang tot. Hay doc them cuon Internet of Things: A Hands-On Approach de cung co kien thuc va thuc hanh voi cac du an nhu he thong dieu khien thiet bi tu xa hoac tu dong hoa nha thong minh de hieu ro hon.", 
+            "Ban nen on tap cac khai niem co ban nhu cam bien, giao thuc truyen thong (MQTT, HTTP), va cloud computing. Sau do thuc hanh thiet lap cac he thong don gian nhu giam sat moi truong hoac dieu khien thiet bi qua Internet.", 
+            "Kien thuc nen cua ban con yeu. Ban nen hoc lai cac khai niem nhu thiet bi ket noi, cam bien va truyen du lieu. Thuc hanh voi cac vi du don gian nhu bat/tat thiet bi tu xa hoac thu thap du lieu tu cam bien qua WiFi.", 
+            "Ban nen tap trung vao cac khai niem co ban nhu cam bien, cac giao thuc truyen thong va cach ket noi thiet bi voi Internet. Xay dung cac du an nho nhu he thong do nhiet do hoac dieu khien den tu xa de hieu ro cach he thong IoT hoat dong."
+        )),
 
-        assert(mon_hoc(4, 2, "Phat trien ung dung cho thiet bi di dong", 
-            "Ban da nam vung kien thuc phat trien ung dung di dong! Hay doc cuon Android Programming: The Big Nerd Ranch Guide hoac iOS Programming: The Big Nerd Ranch Guide de hieu sau hon ve cac ky thuat nang cao.", 
-            "Ban co nen tang tot. Hay doc them cuon Kotlin Programming: The Big Nerd Ranch Guide (Android) hoac Swift Programming (iOS) de cung co kien thuc va xay dung cac ung dung nhu chat app, cac app tich hop dich vu web de nam ro quy trinh phat trien.", 
-            "Ban nen on tap cac khai niem co ban nhu giao dien nguoi dung (UI), xu ly su kien, va luu tru du lieu. Sau do tao cac ung dung don gian nhu may tinh hoac trinh phat nhac de lam quen voi cac cong cu va ngon ngu lap trinh.", 
-            "Kien thuc nen cua ban con yeu. Hay hoc lai cac khai niem co ban nhu tao UI, quan ly du lieu va xu ly su kien. Sau do xay dung cac app nho nhu ghi chu hoac dong ho bao thuc de hieu cach cac thanh phan ket hop voi nhau.", 
-            "Ban nen tap trung vao cac khai niem co ban nhu thiet ke giao dien, quan ly hoat dong, va ket noi du lieu. Sau do xay dung cac ung dung don gian va dan lam quen voi viec xu ly cac tuong tac co ban de xay dung nen tang vung chac."
-        )),
-        assert(mon_hoc(4, 2, "Dam bao chat luong phan mem", 
-            "Ban da nam vung kien thuc dam bao chat luong phan mem! Hay doc Software Quality Assurance: From Theory to Implementation cua Daniel Galin de hieu sau hon ve cac quy trinh kiem thu nang cao, cac tieu chuan quoc te (ISO, CMMI), va quy trinh Agile.", 
-            "Ban co nen tang tot. Hay doc them Lessons Learned in Software Testing cua Cem Kaner de cung co kien thuc sau do viet kich ban kiem thu tu dong voi cac cong cu nhu Selenium hoac JUnit, va tham gia cac du an nhom de hieu ro hon ve quy trinh QA.", 
-            "Ban nen doc cuon Foundations of Software Testing de hieu ro ve cac loai kiem thu va cach thuc lap ke hoach kiem thu. Sau do viet test case va thuc hien cac bai kiem thu don gian de lam quen voi quy trinh QA.", 
-            "Kien thuc nen con yeu. Ban nen hoc lai cac khai niem nhu vong doi kiem thu, cac loai kiem thu va ky thuat viet test case. Sau do lam viec voi cac vi du kiem thu nho de hieu ro hon ve quy trinh kiem thu phan mem.", 
-            "Ban nen tap trung vao cac khai niem co ban nhu kiem thu thu cong, tu dong hoa kiem thu, va quy trinh kiem thu phan mem. Thuc hanh viet cac test case don gian va hoc cach su dung cac cong cu kiem thu co ban de xay dung nen tang kien thuc vung chac."
-        )),
-        assert(mon_hoc(4, 2, "Kien truc va thiet ke phan mem", 
-            "Ban da nam vung kien thuc ve kien truc va thiet ke phan mem! Ban nen doc them Design Patterns: Elements of Reusable Object-Oriented Software va Software Architecture in Practice de hieu sau hon ve cac mau thiet ke va phong cach kien truc.", 
-            "Ban co nen tang tot. Ban nen doc them Clean Architecture de cung co kien thuc, sau do thiet ke cac he thong vua va nho, ap dung cac mau thiet ke (Design Patterns) nhu MVC, Singleton va Observer de hieu ro cach cac thanh phan phoi hop voi nhau.", 
-            "Ban nen on tap lai cac khai niem co ban nhu nguyen tac thiet ke (SOLID), mau thiet ke, va cac loai kien truc phan mem (Layered, Microservices). Sau do doc them cuon Head First Design Patterns de hieu ro hon ve cac mau thiet ke pho bien.", 
-            "Kien thuc nen cua ban con yeu. Ban nen hoc lai cac khai niem co ban ve kien truc phan mem, tu mo hinh hoa den thiet ke he thong. Sau do thiet ke cac he thong don gian va hoc cach ap dung cac nguyen tac thiet ke vao thuc te.", 
-            "Ban nen doc cuon Introduction to Software Architecture de hieu cac khai niem nhu phan lop, mo hinh MVC, va cac nguyen ly thiet ke co ban. Sau do tao cac du an nho va ap dung cac mau thiet ke don gian de xay dung nen tang kien thuc vung chac."
-        )),
-        Z42CDCNPM_Kha_0 = "Ban co nen tang tot. Hay doc them cuon Software Architecture Patterns cua Mark Richards de hieu ro hon ve cac mo hinh kien truc phan mem va hay tham gia vao cac du an nhom de thuc hanh trien khai cac he thong phan mem phuc tap va cai thien ky nang la",
-        Y42CDCNPM_Kha_1 = "m viec nhom.",
-        concat(Z42CDCNPM_Kha_0, Y42CDCNPM_Kha_1, Z42CDCNPM_Kha_1),
-        assert(mon_hoc(4, 2, "Chuyen de cong nghe phan mem", 
-            "Ban da nam vung kien thuc ve cong nghe phan mem! Hay doc Continuous Delivery cua Jez Humble de tim hieu them ve DevOps va cac phuong phap trien khai phan mem hien dai.", 
-            Z42CDCNPM_Kha_1,
-            "Ban hay on tap lai cac khai niem co ban ve kien truc phan mem, quan ly vong doi phan mem va kiem thu tu dong sau do thuc hanh voi cac du an nho de hieu ro cach ap dung ly thuyet vao thuc te.", 
-            "Ban hay hoc lai cac khai niem co ban nhu quy trinh phat trien phan mem, kiem thu va bao tri phan mem. Thuc hanh bang cach tham gia vao cac du an nho de hieu cach van hanh cong nghe phan mem.", 
-            "Ban nen tap trung vao cac buoc phat trien phan mem tu lap ke hoach den kiem thu va bao tri. Thuc hanh voi cac bai tap nho de hieu ro cach phat trien va quan ly du an phan mem."
-        )),
-        assert(mon_hoc(4, 2, "Xay dung cac he thong nhung", 
-            "Ban da nam vung kien thuc ve he thong nhung! Ban nen doc them cuon Embedded Systems Architecture cua Tammy Noergaard de hieu them ve kien truc va toi uu hoa he thong nhung.", 
-            "Ban co nen tang tot. Hay doc them Programming Embedded Systems de cung co kien thuc sau do phat trien cac ung dung nhung don gian voi vi dieu khien nhu ESP32 hoac ARM Cortex de hieu ro hon ve giao tiep giua phan cung va phan mem.", 
-            "Ban nen tham khao cuon Embedded Systems Design cua Steve Heath de hieu ro hon ve cac ky thuat thiet ke he thong nhung va thuc hanh lap trinh va cau hinh vi dieu khien cho cac bai toan nho nhu dieu khien dong co hoac doc cam bien.", 
-            "Kien thuc nen cua ban con yeu. Ban nen hoc lai cac khai niem co ban nhu lap trinh nhung, quan ly bo nho va cac giao thuc truyen thong. Thuc hanh voi cac bai tap co ban nhu dieu khien LED hoac cam bien de lam quen voi lap trinh he thong nhung.", 
-            "Ban nen hoc cach lap trinh co ban cho vi dieu khien va lam quen voi cac khai niem co ban nhu xu ly ngat va giao tiep I2C/SPI. Thuc hanh bang cach lap trinh cac du an nho nhu dieu khien thiet bi tu xa de hieu ro cach he thong nhung hoat dong."
-        )),
-        assert(mon_hoc(4, 2, "Phat trien phan mem huong dich vu", 
-            "Ban da nam vung kien thuc ve phat trien phan mem huong dich vu! Ban nen doc them cuon SOA with REST cua Thomas Erl de hieu sau hon ve cac mo hinh kien truc dich vu va ap dung chung vao thuc te.", 
-            "Ban co nen tang tot. Doc them Building Microservices de cung co kien thuc va thuc hanh bang cach phat trien cac ung dung dua tren dich vu nho voi Spring Boot, Node.js va ket noi cac dich vu voi nhau thong qua API REST.", 
-            "Ban nen on tap cac khai niem co ban ve SOA (Service-Oriented Architecture), RESTful APIs, va giao thuc HTTP. va thuc hanh tao cac API REST don gian va xay dung ung dung nho dua tren dich vu.", 
-            "Kien thuc nen cua ban con yeu. Hay bat dau lai voi cuon Service-Oriented Architecture for Dummies de hoc lai cac khai niem nhu thiet ke dich vu va cach ket noi cac dich vu voi nhau.", 
-            "Ban nen tap trung vao cac khai niem co ban nhu API, dich vu RESTful va cach to chuc he thong huong dich vu. Thuc hanh phat trien cac du an nho, tap trung vao viec xay dung cac dich vu co ban va tich hop chung vao he thong lon hon."
-        )),
+        
+        
+            
         Z51TTTN_Kha_0 = "Ban co nen tang tot. Hay tim hieu sau hon ve cac quy trinh tai noi thuc tap va co gang hoan thien du an thuc tap cua minh. Luyen tap viet bao cao thuc tap chi tiet, ro rang va tap trung vao cai thien ky nang trinh bay va phan bien de san sang cho buo",
         Y51TTTN_Kha_1 = "i bao ve thuc tap.",
         concat(Z51TTTN_Kha_0, Y51TTTN_Kha_1, Z51TTTN_Kha_1),
