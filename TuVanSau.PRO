@@ -63,6 +63,7 @@ predicates
 	tu_tuong_HCM_21
 	tu_tuong_HCM_22
 	tu_tuong_HCM_23
+/*
 	re_nhanh_tu_tuong_HCM_21_3(i)
 	tu_tuong_HCM_21_31
 	tu_tuong_HCM_21_32
@@ -73,7 +74,7 @@ predicates
 	re_nhanh_tu_tuong_HCM_23_3(i)
 	tu_tuong_HCM_23_31
 	tu_tuong_HCM_23_32
-	
+*/	
 	
 	oop_1
 	re_nhanh_oop_2(i)
@@ -96,13 +97,14 @@ predicates
 	re_nhanh_lap_trinh_web_22_3(i)
 	lap_trinh_web_22_31
 	lap_trinh_web_22_32
+	/*
 	re_nhanh_lap_trinh_web_22_31_4(i)
 	lap_trinh_web_22_31_41
 	lap_trinh_web_22_31_42
 	re_nhanh_lap_trinh_web_22_32_4(i)
 	lap_trinh_web_22_32_41
 	lap_trinh_web_22_32_42
-	
+	*/
 	
 	iot_1
 	re_nhanh_iot_2(i)
@@ -112,13 +114,15 @@ predicates
 	re_nhanh_iot_21_3(i)
 	iot_21_31
 	iot_21_32
+/*
 	re_nhanh_iot_22_3(i)
 	iot_22_31
 	iot_22_32
 	re_nhanh_iot_23_3(i)
 	iot_23_31
 	iot_23_32
-	
+*/
+
 	test_tu_van_sau
 	nhap_du_lieu_de_test0(as)
 	nhap_du_lieu_de_test1(as)
@@ -222,14 +226,14 @@ clauses
 	the_chat_21_31 :- % nhanh 1 cap 3 thuoc nhanh 1 cap 2
 		shiftwindow(12),
 		clearwindow,
-		write("Danh sach cac CLB\n\n"),
+		write("Tham gia CLB the duc nhu bong da, bong chuyen, boi loi, yoga hoac gym giup ban nang cao suc khoe va mo rong moi quan he. Duy tri tap luyen deu dan, dat muc tieu cu the va tan huong qua trinh se giup ban luon co dong luc va tien bo.\n\n"),
 		write("Nhan phim bat ki de tiep tuc...\n"),
 		readchar(_).
 	
 	the_chat_21_32 :-
 		shiftwindow(12),
 		clearwindow,
-		write("Goi y tim ban tap luyen chung\n\n"),
+		write("Neu khong muon tham gia CLB, hay thu tim ban tap luyen chung de tang them dong luc.\n\n"),
 		write("Nhan phim bat ki de tiep tuc...\n"),
 		readchar(_).	
 		
@@ -256,14 +260,16 @@ clauses
 	the_chat_22_31 :- % nhanh 1 cap 3 thuoc nhanh 2 cap 2
 		shiftwindow(12),
 		clearwindow,
-		write("Dua ra cac che do tap luyen\n\n"),
+		write("- Tap nhe va deu dan: Bat dau voi bai tap nhe nhang nhu di bo 15-20 phut moi ngay, tang dan thoi gian va cuong do khi co the thich nghi. Tranh gang suc qua muc de tranh chan thuong.\n"),
+		write("- Chon bai tap phuc hoi: Thuc hien yoga, pilates hoac bai tap gian co giup thu gian va tang dan suc ben, cai thien kha nang ho hap va tuan hoan ma khong gay ap luc lon len co bap.\n\n"),
 		write("Nhan phim bat ki de tiep tuc...\n"),
 		readchar(_).
 	
 	the_chat_22_32 :-
 		shiftwindow(12),
 		clearwindow,
-		write("Dua ra loi khuyen ve dinh duong\n\n"),
+		write("An du dinh duong va de tieu hoa: Chia nho bua an, uu tien chao, sup, va rau cu luoc. Bo sung thuc pham giau protein nhu trung, ca, va dau de tang cuong the luc. Tranh thuc an nhieu dau mo va kho tieu.\n"),
+		write("Uong du nuoc va bo sung vitamin: Uong nuoc thuong xuyen, ket hop nuoc ep trai cay giau vitamin C de tang de khang. Bo sung them cac loai hat, sua, va thuc pham giau vitamin B, D giup co the hoi phuc nhanh hon.\n\n"),
 		write("Nhan phim bat ki de tiep tuc...\n"),
 		readchar(_).
 		
@@ -290,14 +296,14 @@ clauses
 	the_chat_23_31 :- % nhanh 1 cap 3 thuoc nhanh 3 cap 2
 		shiftwindow(12),
 		clearwindow,
-		write("Dua ra cac bai tap ngan\n\n"),
+		write("Tan dung bai tap ngan 5-10 phut: Thuc hien cac bai tap cuong do cao nhu HIIT, plank, hoac nhay day tai nha. Chi can 1-2 lan moi ngay giup cai thien suc ben va tang nang luong ma khong can nhieu thoi gian.\n\n"),
 		write("Nhan phim bat ki de tiep tuc...\n"),
 		readchar(_).
 	
 	the_chat_23_32 :-
 		shiftwindow(12),
 		clearwindow,
-		write("Dua ra cac bai tap khong can dung cu tai nha\n\n"),
+		write("Thuc hien cac bai tap don gian nhu hit dat, squat, plank, va lunges. Chi can 10-15 phut moi ngay giup duy tri suc khoe, tang suc ben ma khong can thiet bi hay khong gian lon.\n\n"),
 		write("Nhan phim bat ki de tiep tuc...\n"),
 		readchar(_).
 		
@@ -350,14 +356,14 @@ clauses
 	ki_nang_thuyet_trinh_21_31 :- % nhanh 1 cap 3 thuoc nhanh 1 cap 2
 		shiftwindow(12),
 		clearwindow,
-		write("Danh sach cac CLB lien quan\n\n"),
+		write("Tham gia CLB hung bien hoac nhom thao luan giup ban ren luyen ky nang thuyet trinh va tu tin hon. Luyen tap deu dan, dat muc tieu cai thien giong noi, ngon ngu co the va tan huong qua trinh se giup ban tien bo nhanh chong.\n\n"),
 		write("Nhan phim bat ki de tiep tuc...\n"),
 		readchar(_).
 	
 	ki_nang_thuyet_trinh_21_32 :-
 		shiftwindow(12),
 		clearwindow,
-		write("Goi y tim ban tap luyen chung\n\n"),
+		write("Neu khong muon tham gia CLB, hay thu tim ban tap luyen chung de tang them dong luc.\n\n"),
 		write("Nhan phim bat ki de tiep tuc...\n"),
 		readchar(_).	
 		
@@ -385,15 +391,14 @@ clauses
 		shiftwindow(12),
 		clearwindow,
 		write("- Thuc hanh voi ban be hoac gia dinh\n"),
-		write("- Ghi am va nghe lai de tu cai thien\n\n"),
+		write("- Luyen tap truoc guong hoac quay video bai noi cua ban. Xem lai va cai thien tung lan se giup ban tu tin hon trong moi lan thuyet trinh.\n\n"),
 		write("Nhan phim bat ki de tiep tuc...\n"),
 		readchar(_).
 	
 	ki_nang_thuyet_trinh_22_32 :-
 		shiftwindow(12),
 		clearwindow,
-		write("- Huong dan ky thuat thu gian\n"),
-		write("- Goi y cac tap luyen voi guong hoac quay video\n\n"),
+		write("- Thuc hien cac bai tap hit tho sau truoc khi thuyet trinh va hinh dung ban than thanh cong se giup ban giam cang thang va tu tin hon.\n\n"),
 		write("Nhan phim bat ki de tiep tuc...\n"),
 		readchar(_).
 		
@@ -420,14 +425,14 @@ clauses
 	ki_nang_thuyet_trinh_23_31 :- % nhanh 1 cap 3 thuoc nhanh 3 cap 2
 		shiftwindow(12),
 		clearwindow,
-		write("Xem cac bai thuyet trinh mau\n\n"),
+		write("Chuan bi cac bai thuyet trinh ngan (1-2 phut) de tan dung thoi gian ranh. Ghi chu y chinh de luyen tap linh hoat va khong can qua nhieu thoi gian.\n\n"),
 		write("Nhan phim bat ki de tiep tuc...\n"),
 		readchar(_).
 	
 	ki_nang_thuyet_trinh_23_32 :-
 		shiftwindow(12),
 		clearwindow,
-		write("Bat chuoc phong cach trinh bay cua nguoi noi tieng\n\n"),
+		write("Luyen tap truoc nguoi than hoac ban be tai nha. Ho co the dua ra phan hoi giup ban cai thien nhanh ma khong can den lop hoc hay CLB.\n\n"),
 		write("Nhan phim bat ki de tiep tuc...\n"),
 		readchar(_).
 	
@@ -456,7 +461,31 @@ clauses
 		tu_tuong_HCM_22;
 		Gtri_nhap = 3,
 		tu_tuong_HCM_23.
-	
+
+	tu_tuong_HCM_21 :- %21: cap 2 nhanh 1
+		shiftwindow(12),
+		clearwindow,
+		write("Hay doc sach 'Tu tuong Ho Chi Minh' cua GS. Mac Duong de nam ro noi dung co ban. Ghi chu lai cac khai niem chinh va trao doi voi ban hoc de hieu sau hon.\n"),
+		write("Xem cac bai giang online tren YouTube ve tu tuong Ho Chi Minh de duoc giang giai de hieu va hinh dung ro hon.\n\n"),
+		write("Nhan phim bat ki de tiep tuc...\n"),
+		readchar(_).
+		
+	tu_tuong_HCM_22 :- %21: cap 2 nhanh 1
+		shiftwindow(12),
+		clearwindow,
+		write("Tham gia hoat dong Doan – Hoi de ap dung tu tuong Ho Chi Minh vao thuc te. Hoc qua cac du an cong dong se giup hieu ro hon ve y nghia thuc tien.\n"),
+		write("Thuc hanh bang cach viet bai phan tich nhung su kien hien tai lien quan den tu tuong Ho Chi Minh de cung co kien thuc.\n\n"),
+		write("Nhan phim bat ki de tiep tuc...\n"),
+		readchar(_).
+		
+	tu_tuong_HCM_23 :- %21: cap 2 nhanh 1
+		shiftwindow(12),
+		clearwindow,
+		write("Tim hieu ve cuoc doi va nhung cau chuyen y nghia cua Bac Ho de cam nhan sau sac hon gia tri tu tuong cua Nguoi.\n"),
+		write("Tham gia thao luan nhom voi ban be hoac tim cach lien he mon hoc voi cac van de xa hoi hien tai de tao hung thu hoc tap.\n\n"),
+		write("Nhan phim bat ki de tiep tuc...\n"),
+		readchar(_).
+/*	
 	tu_tuong_HCM_21 :- %21: cap 2 nhanh 1
 		shiftwindow(12),
 		clearwindow,
@@ -568,7 +597,7 @@ clauses
 		write("Dua ra phuong phap lam du an nho viet bai luan\n\n"),
 		write("Nhan phim bat ki de tiep tuc...\n"),
 		readchar(_).
-	
+*/	
 	oop_1 :-
 		shiftwindow(11),
 		clearwindow,
@@ -615,7 +644,7 @@ clauses
 	oop_21_31 :- % nhanh 1 cap 3 thuoc nhanh 1 cap 2
 		shiftwindow(12),
 		clearwindow,
-		write("Luyen tap va thuc hanh nhieu hon\n\n"),
+		write("Hay code moi ngay, tu bai tap co ban den du an nho. Tu dat muc tieu hoan thanh cac tinh nang cu the. Viec thuc hanh thuong xuyen giup ban lam quen cu phap, cai thien tu duy lap trinh va tang kha nang xu ly loi nhanh chong.\n\n"),
 		write("Nhan phim bat ki de tiep tuc...\n"),
 		readchar(_).
 	
@@ -642,21 +671,21 @@ clauses
 	oop_21_32_41 :-
 		shiftwindow(12),
 		clearwindow,
-		write("De xuat cac phuong phap game hoa de tao dong luc...\n\n"),
+		write("Hay thu cac phuong phap game hoa nhu CodeCombat de luyen tap tu duy qua thuc hanh.\n\n"),
 		write("Nhan phim bat ki de tiep tuc...\n"),
 		readchar(_).
 	
 	oop_21_32_42 :-
 		shiftwindow(12),
 		clearwindow,
-		write("Hoc nhung du an thuc te hoac cac chu de yeu thich\n\n"),
+		write("Co the ban dang thieu dong luc hoc. Tham gia cac du an thuc te lien quan den so thich, vi du nhu lam game nho hoac chatbot, de tang hung thu hoc tap.\n\n"),
 		write("Nhan phim bat ki de tiep tuc...\n"),
 		readchar(_).
 		
 	oop_22 :- %21: cap 2 nhanh 2
 		shiftwindow(12),
 		clearwindow,
-		write("Loi khuyen ve on oop co ban\n\n"),
+		write("Bat dau voi vi du don gian ve lop (class) va doi tuong (object) trong doi song, nhu 'Xe la mot lop, con Xe may la mot doi tuong'. Sau do, luyen tap voi cac bai tap nho de hieu ke thua, dong goi, va da hinh.\n\n"),
 		write("Nhan phim bat ki de tiep tuc...\n"),
 		readchar(_).
 	
@@ -708,14 +737,14 @@ clauses
 	lap_trinh_web_21_31 :- % nhanh 1 cap 3 thuoc nhanh 1 cap 2
 		shiftwindow(12),
 		clearwindow,
-		write("Luyen tap tren free code camp / code pen\n\n"),
+		write("Hoc HTML/CSS tren FreeCodeCamp hoac CodePen va doc HTML & CSS: Design and Build Websites cua Jon Duckett de nam ro nen tang front-end.\n\n"),
 		write("Nhan phim bat ki de tiep tuc...\n"),
 		readchar(_).
 	
 	lap_trinh_web_21_32 :-
 		shiftwindow(12),
 		clearwindow,
-		write("Doc tai lieu va luyen tap cac project nho\n\n"),
+		write("Thuc hanh backend voi project nho. Doc Eloquent JavaScript hoac Node.js Design Patterns de hieu sau ve lap trinh server-side.\n\n"),
 		write("Nhan phim bat ki de tiep tuc...\n"),
 		readchar(_).	
 		
@@ -738,7 +767,15 @@ clauses
 		lap_trinh_web_22_31;
 		Gtri_nhap = 2,
 		lap_trinh_web_22_32.
-	
+		
+	lap_trinh_web_22_31 :- % nhanh 1 cap 3 thuoc nhanh 2 cap 2
+		shiftwindow(12),
+		clearwindow,
+		write("- Khuyen khich su dung lenh EXPLAIN trong SQL de phan tich hieu nang va toi uu hoa cac truy van trong co so du lieu.\n"),
+		write("- Tham gia thuc hanh tren SQLZoo, LeetCode de ren luyen va cung co kien thuc ve SQL qua cac bai tap tu co ban den nang cao.\n\n"),
+		write("Nhan phim bat ki de tiep tuc...\n"),
+		readchar(_).
+/*	
 	lap_trinh_web_22_31 :- % nhanh 1 cap 3 thuoc nhanh 2 cap 2
 		shiftwindow(12),
 		clearwindow,
@@ -762,23 +799,31 @@ clauses
 	lap_trinh_web_22_31_41 :-
 		shiftwindow(12),
 		clearwindow,
-		write("Khuyen khich sinh vien su dung EXPLAIN trong SQL de phan tich cach ma co so du lieu thuc hien cac truy van\n\n"),
+		write("Khuyen khich su dung lenh EXPLAIN trong SQL de phan tich hieu nang va toi uu hoa cac truy van trong co so du lieu.\n\n"),
 		write("Nhan phim bat ki de tiep tuc...\n"),
 		readchar(_).
 		
 	lap_trinh_web_22_31_42 :-
 		shiftwindow(12),
 		clearwindow,
-		write("Goi y tham gia cac trang web thuc hanh SQL nhu SQLZoo, LeetCode\n\n"),
+		write("Tham gia thuc hanh tren SQLZoo, LeetCode de ren luyen va cung co kien thuc ve SQL qua cac bai tap tu co ban den nang cao.\n\n"),
 		write("Nhan phim bat ki de tiep tuc...\n"),
 		readchar(_).
-		
+*/		
+	lap_trinh_web_22_32 :-
+		shiftwindow(12),
+		clearwindow,
+		write("- Tham gia cong dong chuyen gia SQL tren Stack Overflow hoac cac dien dan nhu DB Fiddle de giai dap thac mac va hoc hoi.\n"),
+		write("- Su dung cac cong cu nhu Index va View de cai thien hieu suat truy van. Doc them tai lieu ve toi uu hoa truy van tren trang Microsoft SQL Docs.\n\n"),
+		write("Nhan phim bat ki de tiep tuc...\n"),
+		readchar(_).
+/*	
 	lap_trinh_web_22_32 :-
 		shiftwindow(12),
 		clearwindow,
 		write("Ban gap kho khan trong phan nao?\n\n"),
 		write("Nhap 1: Chua hieu cac khai niem\n"),
-		write("Nhap 2: Chua co ckinh nghiem\n"),
+		write("Nhap 2: Chua co kinh nghiem\n"),
 		write("\nHay nhap so tuong ung: "),
 		readint(Gtri_nhap),
 		ktra_nhap_hoi_dap(Gtri_nhap, 2),
@@ -796,17 +841,17 @@ clauses
 	lap_trinh_web_22_32_41 :-
 		shiftwindow(12),
 		clearwindow,
-		write("Goi y cac khoa hoc\n\n"),
+		write("Tham gia cong dong chuyen gia SQL tren Stack Overflow hoac cac dien dan nhu DB Fiddle de giai dap thac mac va hoc hoi.\n\n"),
 		write("Nhan phim bat ki de tiep tuc...\n"),
 		readchar(_).
 		
 	lap_trinh_web_22_32_42 :-
 		shiftwindow(12),
 		clearwindow,
-		write("De xuat cac bai thuc hanh\n\n"),
+		write("Su dung cac cong cu nhu Index va View de cai thien hieu suat truy van. Doc them tai lieu ve toi uu hoa truy van tren trang Microsoft SQL Docs.\n\n"),
 		write("Nhan phim bat ki de tiep tuc...\n"),
 		readchar(_).
-		
+*/		
 
 	
 	iot_1 :-
@@ -838,9 +883,9 @@ clauses
 	iot_21 :- %21: cap 2 nhanh 1
 		shiftwindow(12),
 		clearwindow,
-		write("Ban muon hoc theo qua phuong phap nao?\n\n"),
-		write("Nhap 1: Hoc qua video va tai lieu tom tat\n"),
-		write("Nhap 2: Thuc hanh qua vi du nho\n"),
+		write("Ban gap kho ve phan nao duoi day?\n\n"),
+		write("Nhap 1: Phan mem\n"),
+		write("Nhap 2: Phan cung\n"),
 		write("\nHay nhap so tuong ung: "),
 		readint(Gtri_nhap),
 		ktra_nhap_hoi_dap(Gtri_nhap, 2),
@@ -858,17 +903,33 @@ clauses
 	iot_21_31 :- % nhanh 1 cap 3 thuoc nhanh 1 cap 2
 		shiftwindow(12),
 		clearwindow,
-		write("Goi y sinh vien tham khao cac khoa hoc ngan tren Youtube, Coursera hoac Udemy ve IoT co ban.\n\n"),
+		write("Hoc Python hoac C qua cac khoa tren Codecademy. Thu tao du an nho nhu he thong dem nguoi voi OpenCV. Doc tai lieu Node-RED tu trang chu de hieu luong du lieu.\n\n"),
 		write("Nhan phim bat ki de tiep tuc...\n"),
 		readchar(_).
 	
 	iot_21_32 :-
 		shiftwindow(12),
 		clearwindow,
-		write("Khuyen khich bat dau voi mot bai tap don gian, nhu dieu khien den giao thong\n\n"),
+		write("Dung Arduino Starter Kit de thuc hanh cam bien va den LED. Xem du an mau tren Instructables. Khi gap loi, kiem tra ky so do mach va thu lai tung buoc.\n\n"),
 		write("Nhan phim bat ki de tiep tuc...\n"),
 		readchar(_).	
+	
+	iot_22 :- %21: cap 2 nhanh 2
+		shiftwindow(12),
+		clearwindow,
+		write("- Thuc hanh ket noi ESP32 va Raspberry Pi qua Node-RED. Xem kenh YouTube 'The IoT Projects' de lam theo tung buoc.\n"),
+		write("- Kiem tra ky cac giao thuc nhu MQTT, HTTP khi gap loi. Tim du an tuong tu tren Hackster.io de hieu cach giai quyet.\n\n"),
+		write("Nhan phim bat ki de tiep tuc...\n"),
+		readchar(_).
 		
+	iot_23 :- %21: cap 2 nhanh 2
+		shiftwindow(12),
+		clearwindow,
+		write("- Tham gia cac cuoc thi IoT tren Devpost de trai nghiem thuc te va tang dong luc hoc tap.\n"),
+		write("- Ket noi voi ban be hoac giang vien de lam du an nhom, giup ban co them dong luc va phan hoi huu ich.\n\n"),
+		write("Nhan phim bat ki de tiep tuc...\n"),
+		readchar(_).
+/*		
 	iot_22 :- %21: cap 2 nhanh 2
 		shiftwindow(12),
 		clearwindow,
@@ -936,5 +997,5 @@ clauses
 		write("Khuyen khich sinh vien tim ban cung lop de chia nho cong viec va lam du an nhom.\n\n"),
 		write("Nhan phim bat ki de tiep tuc...\n"),
 		readchar(_).
-	
+*/	
 		

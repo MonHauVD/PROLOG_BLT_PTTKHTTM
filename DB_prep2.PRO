@@ -334,18 +334,18 @@ clauses
 
 
 		assert(mon_hoc(4, 2, "The chat", 
-            "Ban dang lam rat tot! Hay duy tri viec tap luyen deu dan de nang cao the luc va cai thien thanh tich. Dung quen bo sung dinh duong va nghi ngoi de co suc khoe tot nhat.", 
-            "Ket qua cua ban kha tot! De dat diem cao hon, ban co the tang cuong cac bai tap suc ben va the luc. Len ke hoach tap luyen deu dan va giu vung tinh than de dat nhieu tien bo", 
-            "Ban co tiem nang phat trien. Hay danh them thoi gian cho cac bai tap co ban va cai thien ky thuat. Lap ke hoach tap luyen deu dan va kien tri se giup ban cai thien diem so", 
-            "Ban can tap trung nhieu hon. Hay bat dau voi cac bai tap nhe nhang va tang dan cuong do. Kien tri luyen tap se giup ban cai thien dan the luc va diem so cua minh.", 
-            "Ket qua hien tai chua tot, nhung dung nan long! Hay nho giao vien hoac ban be ho tro trong viec xay dung ke hoach tap luyen phu hop. Tung buoc cai thien se mang lai su tien bo ro ret."
+            "Tiep tuc duy tri thoi quen ren luyen hang ngay. Tham gia cac hoat dong the thao chuyen nghiep hon hoac cau lac bo the thao de nang cao ky nang.", 
+            "Ban da co nen tang tot, hay co gang cai thien cac ky nang con yeu va tang cuong the luc. Dat ra muc tieu moi de nang cap ban than len muc gioi.", 
+            "Tap trung vao cai thien the luc va ky thuat co ban. Tham gia vao cac hoat dong the thao ngoai khoa se giup ban duy tri dong luc luyen tap.", 
+            "Bat dau bang nhung bai tap nhe va tang dan cuong do. Hay tao cho minh thoi quen van dong moi ngay va nho ban be hoac giao vien ho tro.", 
+            "Khong sao neu ban gap kho khan ban dau. Tap trung vao viec ren luyen cac bai tap don gian de nang cao suc ben va tim niem vui trong the thao."
         )),
 		assert(mon_hoc(4, 2, "Ki nang thuyet trinh", 
-            "Ban co ky nang thuyet trinh xuat sac! Hay tiep tuc luyen tap de tu tin hon, cai thien ngon ngu co the va kha nang tuong tac voi khan gia. Dieu nay se giup ban tro thanh mot nguoi thuyet trinh cuon hut.", 
-            "Ban co ky nang thuyet trinh tot. De tien xa hon, hay chu y den cach truyen dat cam xuc va kiem soat giong noi. Thuc hanh thuong xuyen se giup ban tu tin va thu hut khan gia hon.", 
-            "Ban da co nen tang tot. Hay danh them thoi gian chuan bi noi dung, luyen tap noi truoc guong hoac truoc ban be de cai thien su tu tin va mach lac trong bai thuyet trinh.", 
-            "Ban can cai thien them. Hay bat dau bang cach tap trung vao noi dung va ro rang trong cach dien dat. Tham gia cac buoi thuyet trinh nhom de hoc hoi va tang su tu tin qua tung lan trinh bay.", 
-            "Ban can no luc nhieu hon. Hay thu luyen tap noi truoc guong va nho ban be gop y. Tham gia lop hoc hoac cau lac bo thuyet trinh se giup ban cai thien su tu tin va cach trinh bay hieu qua hon."
+            "Tham gia cac cuoc thi hung bien hoac to chuc buoi thuyet trinh de phat trien them. Dung quen giup do nguoi khac cai thien ky nang cua ho.", 
+            "Ban da co su tu tin, nhung hay chu y cai thien ngon ngu co the va quan ly thoi gian. Dat ra thu thach moi de tien toi muc gioi.", 
+            "Chuan bi ky cang noi dung truoc moi buoi thuyet trinh. Luyen tap voi ban be va nhan phan hoi se giup ban tien bo nhanh hon.", 
+            "Hay bat dau voi nhung bai thuyet trinh ngan va don gian. Nho su ho tro tu giao vien hoac ban be de dan lay lai su tu tin khi noi truoc dam dong.", 
+            "Dung so mac loi. Thuc hanh thuong xuyen voi nhung nguoi ban than thiet va tap trung vao cai thien tung phan nho se giup ban tien bo nhanh chong."
         )),
 		assert(mon_hoc(4, 2, "Tu tuong Ho Chi Minh",
             "Ban hoc rat tot! Hay doc them Ho Chi Minh: Toan tap de nghien cuu sau hon ve tu tuong va di san cua Nguoi. Tham gia cac cuoc thi tim hieu ve tu tuong Ho Chi Minh de ren luyen tu duy va ky nang phan tich.",
