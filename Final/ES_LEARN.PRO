@@ -1,7 +1,7 @@
 % BTL zeta
 code = 3000
-include "BTL_git/DB_prep2.PRO"
-include "BTL_git/TuVanSau.PRO"
+include "BTL_git/final/DB_01.PRO"
+include "BTL_git/final/TuVanSau.PRO"
 /* Have included from file BTL_git/TuVanSau.PRO
 domains
     i = integer
@@ -628,5 +628,5 @@ s :- checking_prepare,
 	tu_van_chuyen_sau,
 	loi_cam_on,
 	clear_db2.
-%goal s
+goal s
  

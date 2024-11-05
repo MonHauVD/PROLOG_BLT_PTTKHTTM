@@ -17,10 +17,11 @@ Bài tập lớn nhóm 03 - Phân tích thiết kế hệ thống thông minh - 
     - "PROLOG"
 5. Sau đó, PROLOG sẽ khởi động.
 6. Ấn ALT + F -> chọn Load -> Enter.
-7. Chọn BTL_git\XXX  -> Enter.
-    - XXX = "BTL_EPSI.PRO": Bản chỉ có lời khuyên tổng quát và đồ họa
-    - XXX = "BTL_ZETA.PRO": Bản đã bao gồm cả lời khuyên tổng quát và tư vấn sâu. Có đồ họa.
-    - XXX = "TuVanSau.PRO": Bản chỉ để test lại phan tư vấn sâu. (Ấn s2 để chạy).
+    - _7._ Chọn BTL_git\XXX  -> Enter.
+        - XXX = "BTL_EPSI.PRO": Bản chỉ có lời khuyên tổng quát và đồ họa
+        - XXX = "BTL_ZETA.PRO": Bản đã bao gồm cả lời khuyên tổng quát và tư vấn sâu. Có đồ họa.
+        - XXX = "TuVanSau.PRO": Bản chỉ để test lại phan tư vấn sâu. (Ấn s2 để chạy).
+7. Chọn BTL_git\final\ES_Learn.PRO -> Enter.
 8. Ấn ALT + C để Compile.
 9. Ấn ALT + R để Run.
 10. Gõ "s" và Enter để bắt đầu chương trình.

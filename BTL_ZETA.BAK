@@ -75,8 +75,9 @@ predicates
 	remove_table_window(i, i)
 	prepare_table_for_picking_subject(as, i, i)
 	chon_n_mon_tu_van(as, i, i)
-	chon_mon_tu_van(sb, i, i)
-	ktra_danh_dau(i)
+	chon_mon_tu_van(sb, sb, i)
+	ktra_luu_mon_tu_van(sb, sb, i)
+	ktra_danh_dau(sb, sb, i)
 	lay_ds_mon_tu_van(as)
 	
 	
@@ -290,7 +291,7 @@ clauses
 		nam_hoc_nguoi_dung(Nam),
 		hoc_ki_nguoi_dung(Ki),
 		lay_ds_mon(Nam, Ki, Ds_mon),
-		display_table(Ds_mon, 21, 7). % (list, id_window, row)
+		display_table(Ds_mon, 15, 7). % (list, id_window, row)
 	
 	display_table([Head|Tail], Id, Row) :-
 		str_len(Head, Len),
@@ -313,7 +314,7 @@ clauses
 	nhap_n_diem([], 0, _).
 	nhap_n_diem([H|T], N, Len_ds_mon) :-
 		N > 0,
-		Cur_window = (Len_ds_mon - N)*2 + 21,
+		Cur_window = (Len_ds_mon - N)*2 + 15,
 		shiftwindow(Cur_window),
 		%write("Nhap diem mon: ", H), nl,
 		nhap_diem(H, Diem, Cur_window),
@@ -459,51 +460,36 @@ clauses
 		assert(luu_loi_khuyen_db(SttCurr, Mon_hoc_luu, Loi_khuyen_luu)).
 	
 	tu_van_chuyen_sau :-
-		shiftwindow(6),
-		clearwindow, write("tu van chuyen sau"),
-		readchar(_),
 		kiem_tra_ki_hoc_dac_biet, 
-		shiftwindow(6),
-		clearwindow, write("ABCDEFGHI"),
-		readchar(_),
+		% shiftwindow(6),	clearwindow, write("ABCDEFGHI"), readchar(_),
 		tu_van_chuyen_sau_1.
 		
-	tu_van_chuyen_sau :- shiftwindow(6),
-		clearwindow, write("12345678"), readchar(_),!.
+	tu_van_chuyen_sau :- 
+		% shiftwindow(6), clearwindow, write("12345678"), readchar(_),
+		!.
 	
 	tu_van_chuyen_sau_1 :-
-		write("tu_van_chuyen_sau_1"),
-		readchar(_),
 		tao_lay_ds_mon_tu_van,
-		write("tao_lay_ds_mon_tu_van"),
-		readchar(_),
 		findall(Mon0, diem_mon_hoc(Mon0, _), Ds_mon),
 		len_list_str(Ds_mon, Len0),
-		write("Len: ", Len0), nl,
-		readchar(_),
 		remove_table_window(Len0, Len0),
-		write("remove_table"),
-		readchar(_),
+		%write("remove_table"),
+		%readchar(_),
 		makewindow(9, 113, 113, "", 5, 0, 3, 30), 
 		write("Mon hoc"),
 		makewindow(10, 113, 113, "", 5, 30, 3, 10), 
 		write("Chon"),
 		findall(Mon1, luu_mon_can_tu_van(Mon1), Ds_mon_tu_van1),
 		len_list_str(Ds_mon_tu_van1, Len2),
-		shiftwindow(6),
-		clearwindow,
-		write(Ds_mon_tu_van1), nl,
-		write("Len2: ", Len2),
-		readchar(_),
-		prepare_table_for_picking_subject(Ds_mon_tu_van1, Len2, Len2),
+		prepare_table_for_picking_subject(Ds_mon_tu_van1, 15, 7),
 		shiftwindow(6),
 		clearwindow,
 		write("Lua chon mon de nhan tu van sau hon!\nNhap 1 de chon, nhap 0 de bo qua\n"),
-		readchar(_),
-		chon_n_mon_tu_van(Ds_mon_tu_van, Len2, Len2),
+		%readchar(_),
+		chon_n_mon_tu_van(Ds_mon_tu_van1, Len2, Len2),
 		lay_ds_mon_tu_van(Ds_mon_tu_van_da_chon),
 		removewindow(6, 1),
-		makewindow(11, 113, 113, "Mon tu van", 5, 0, 3, 80),
+		makewindow(11, 49, 49, "Mon tu van", 5, 0, 3, 80),
 		makewindow(12, 113, 113, "Tu van", 8, 0, 16, 80),
 		shiftwindow(12),
 		clearwindow,
@@ -524,17 +510,17 @@ clauses
 	
 	tao_lay_ds_mon_tu_van_1([], []).
 	tao_lay_ds_mon_tu_van_1([H_mon|T_mon], [H_diem|T_diem]) :-
-		H_diem < 5,
-		luu_mon_can_tu_van(H_mon),
+		H_diem <= 7,
+		assert(luu_mon_can_tu_van(H_mon)),
 		tao_lay_ds_mon_tu_van_1(T_mon, T_diem);
 		tao_lay_ds_mon_tu_van_1(T_mon, T_diem).
 	
 	remove_table_window(0, _).
 	remove_table_window(N, Len) :-
 		N > 0,
-		Window = (Len - N)*2 + 21,
-		shiftwindow(6), clearwindow,
-		write("N: ", N, "; Len: ", Len, "; removewindow :", Window), nl, readchar(_),
+		Window = (Len - N)*2 + 15,
+		%shiftwindow(6), clearwindow,
+		%write("N: ", N, "; Len: ", Len, "; removewindow :", Window), nl, readchar(_),
 		removewindow(Window, 1),
 		Window1 = Window + 1,
 		removewindow(Window1, 1),
@@ -547,13 +533,9 @@ clauses
 		So_dong = (Len div 24) + 3,
         Id2 = Id + 1,
         Row2 = Row + So_dong - 1,
-		shiftwindow(6),
-		write("Id2: ", Id2), nl, readchar(_),
         makewindow(Id2, 113, 113, "", Row, 0, So_dong, 30),
-		shiftwindow(Id2),
         cursor(0,3), write(Head),
         makewindow(Id, 113, 113, "", Row, 30, So_dong, 10),
-		shiftwindow(Id),
 		Id3 = Id2 + 1,
         display_table(Tail, Id3, Row2).
 	prepare_table_for_picking_subject([], _, _).
@@ -562,7 +544,7 @@ clauses
 	chon_n_mon_tu_van([], 0, _).
 	chon_n_mon_tu_van([H|T], N, Len_ds_mon) :-
 		N > 0,
-		Cur_window = (Len_ds_mon - N)*2 + 21,
+		Cur_window = (Len_ds_mon - N)*2 + 15,
 		shiftwindow(Cur_window),
 		chon_mon_tu_van(H, Danh_dau, Cur_window),
 		N1 = N - 1,
@@ -570,26 +552,41 @@ clauses
 		chon_n_mon_tu_van(T, N1, Len_ds_mon).
 		
 	chon_mon_tu_van(Mon, Danh_dau, Cur_window) :-
-		readint(Danh_dau),
+		shiftwindow(Cur_window),
+		readln(Danh_dau),
 		shiftwindow(6), 
 		clearwindow, 
+		write("Lua chon mon de nhan tu van sau hon!\nNhap y de chon, nhap n de bo qua\n"),
 		shiftwindow(Cur_window),
-		ktra_danh_dau(Danh_dau), !,
+		ktra_danh_dau(Danh_dau, Mon, Cur_window).
+			
+		
+	ktra_luu_mon_tu_van(Mon, Danh_dau, Cur_window) :-
 		assert(luu_mon_tu_van_da_chon(Mon)),
 		shiftwindow(Cur_window), 
 		clearwindow, 
-		cursor(0,2), write(Danh_dau).
-	
-	chon_mon_tu_van(Mon, Danh_dau, Cur_window) :-
+		cursor(0,2), write("yes");
+		Danh_dau = 0, !.
+
+		
+	ktra_danh_dau("y", Mon, Cur_window) :-
+		ktra_luu_mon_tu_van(Mon, "y", Cur_window), !.
+	ktra_danh_dau("Y", Mon, Cur_window) :-
+		ktra_luu_mon_tu_van(Mon, "y", Cur_window), !.	
+	ktra_danh_dau("n", _, Cur_window) :-
+		shiftwindow(Cur_window), 
+		clearwindow, 
+		cursor(0,2), write("no"), !.
+	ktra_danh_dau("N", _, Cur_window) :-
+		shiftwindow(Cur_window), 
+		clearwindow, 
+		cursor(0,2), write("no"), !.
+	ktra_danh_dau(_, Mon, Cur_window) :-
 		shiftwindow(6), clearwindow, 
-		write("Danh dau khong hop le!\nNhap 1 de chon, nhap 0 de bo qua\n"),
+		write("Danh dau khong hop le!\nNhap y de chon, nhap n de bo qua\n"),
         shiftwindow(Cur_window),
 		clearwindow,
-		chon_mon_tu_van(Mon, Danh_dau, Cur_window).
-		
-	ktra_danh_dau(Danh_dau) :-
-		Danh_dau >= 0, 
-		Danh_dau <= 1.
+		chon_mon_tu_van(Mon, _, Cur_window), !.
 	
 	lay_ds_mon_tu_van(Ds_mon_tu_van) :-
 		findall(Mon, luu_mon_tu_van_da_chon(Mon), Ds_mon_tu_van).
@@ -617,7 +614,7 @@ clauses
 	11: Mon dang tu van
 	12: Khu vuc hoi dap cho tu van
 	
-	21 - 35 -...: Cua so ten mon: x, cua so diem, x + 1.
+	15 - 30 -...: Cua so ten mon: x, cua so diem, x + 1.
 */
 		
 s :- checking_prepare,
